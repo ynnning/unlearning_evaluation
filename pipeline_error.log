@@ -1,0 +1,773 @@
+--- Error at 2026-06-06 04:55:11.806064-07:00 ---
+            Exception in main:
+[36mray::unlearn()[39m (pid=5923, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 174, in unlearn
+    import unlearn_corpus
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 10, in <module>
+    from transformers import AdamW, AutoTokenizer, AutoModelForCausalLM
+ImportError: cannot import name 'AdamW' from 'transformers' (/usr/local/lib/python3.12/dist-packages/transformers/__init__.py)
+
+            Traceback:
+Traceback (most recent call last):
+  File "/workspace/unlearning_evaluation/pipeline.py", line 392, in main
+    ) = ray.get(ref)
+        ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ImportError): [36mray::unlearn()[39m (pid=5923, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 174, in unlearn
+    import unlearn_corpus
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 10, in <module>
+    from transformers import AdamW, AutoTokenizer, AutoModelForCausalLM
+ImportError: cannot import name 'AdamW' from 'transformers' (/usr/local/lib/python3.12/dist-packages/transformers/__init__.py)
+        
+
+--- Error at 2026-06-06 04:55:12.320910-07:00 ---
+            Exception in main:
+[36mray::unlearn()[39m (pid=5913, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 174, in unlearn
+    import unlearn_corpus
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 10, in <module>
+    from transformers import AdamW, AutoTokenizer, AutoModelForCausalLM
+ImportError: cannot import name 'AdamW' from 'transformers' (/usr/local/lib/python3.12/dist-packages/transformers/__init__.py)
+
+            Traceback:
+Traceback (most recent call last):
+  File "/workspace/unlearning_evaluation/pipeline.py", line 392, in main
+    ) = ray.get(ref)
+        ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ImportError): [36mray::unlearn()[39m (pid=5913, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 174, in unlearn
+    import unlearn_corpus
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 10, in <module>
+    from transformers import AdamW, AutoTokenizer, AutoModelForCausalLM
+ImportError: cannot import name 'AdamW' from 'transformers' (/usr/local/lib/python3.12/dist-packages/transformers/__init__.py)
+        
+
+--- Error at 2026-06-06 04:55:14.831237-07:00 ---
+            Exception in main:
+[36mray::unlearn()[39m (pid=5919, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 174, in unlearn
+    import unlearn_corpus
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 10, in <module>
+    from transformers import AdamW, AutoTokenizer, AutoModelForCausalLM
+ImportError: cannot import name 'AdamW' from 'transformers' (/usr/local/lib/python3.12/dist-packages/transformers/__init__.py)
+
+            Traceback:
+Traceback (most recent call last):
+  File "/workspace/unlearning_evaluation/pipeline.py", line 392, in main
+    ) = ray.get(ref)
+        ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ImportError): [36mray::unlearn()[39m (pid=5919, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 174, in unlearn
+    import unlearn_corpus
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 10, in <module>
+    from transformers import AdamW, AutoTokenizer, AutoModelForCausalLM
+ImportError: cannot import name 'AdamW' from 'transformers' (/usr/local/lib/python3.12/dist-packages/transformers/__init__.py)
+        
+
+--- Error at 2026-06-06 04:55:15.622477-07:00 ---
+            Exception in main:
+[36mray::unlearn()[39m (pid=5922, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 174, in unlearn
+    import unlearn_corpus
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 10, in <module>
+    from transformers import AdamW, AutoTokenizer, AutoModelForCausalLM
+ImportError: cannot import name 'AdamW' from 'transformers' (/usr/local/lib/python3.12/dist-packages/transformers/__init__.py)
+
+            Traceback:
+Traceback (most recent call last):
+  File "/workspace/unlearning_evaluation/pipeline.py", line 392, in main
+    ) = ray.get(ref)
+        ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ImportError): [36mray::unlearn()[39m (pid=5922, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 174, in unlearn
+    import unlearn_corpus
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 10, in <module>
+    from transformers import AdamW, AutoTokenizer, AutoModelForCausalLM
+ImportError: cannot import name 'AdamW' from 'transformers' (/usr/local/lib/python3.12/dist-packages/transformers/__init__.py)
+        
+
+--- Error at 2026-06-06 04:55:18.456756-07:00 ---
+            Exception in main:
+[36mray::unlearn()[39m (pid=5914, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 174, in unlearn
+    import unlearn_corpus
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 10, in <module>
+    from transformers import AdamW, AutoTokenizer, AutoModelForCausalLM
+ImportError: cannot import name 'AdamW' from 'transformers' (/usr/local/lib/python3.12/dist-packages/transformers/__init__.py)
+
+            Traceback:
+Traceback (most recent call last):
+  File "/workspace/unlearning_evaluation/pipeline.py", line 392, in main
+    ) = ray.get(ref)
+        ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ImportError): [36mray::unlearn()[39m (pid=5914, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 174, in unlearn
+    import unlearn_corpus
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 10, in <module>
+    from transformers import AdamW, AutoTokenizer, AutoModelForCausalLM
+ImportError: cannot import name 'AdamW' from 'transformers' (/usr/local/lib/python3.12/dist-packages/transformers/__init__.py)
+        
+
+--- Error at 2026-06-06 04:55:19.741528-07:00 ---
+            Exception in main:
+[36mray::unlearn()[39m (pid=5910, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 174, in unlearn
+    import unlearn_corpus
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 10, in <module>
+    from transformers import AdamW, AutoTokenizer, AutoModelForCausalLM
+ImportError: cannot import name 'AdamW' from 'transformers' (/usr/local/lib/python3.12/dist-packages/transformers/__init__.py)
+
+            Traceback:
+Traceback (most recent call last):
+  File "/workspace/unlearning_evaluation/pipeline.py", line 392, in main
+    ) = ray.get(ref)
+        ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ImportError): [36mray::unlearn()[39m (pid=5910, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 174, in unlearn
+    import unlearn_corpus
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 10, in <module>
+    from transformers import AdamW, AutoTokenizer, AutoModelForCausalLM
+ImportError: cannot import name 'AdamW' from 'transformers' (/usr/local/lib/python3.12/dist-packages/transformers/__init__.py)
+        
+
+--- Error at 2026-06-06 04:55:22.730412-07:00 ---
+            Exception in main:
+[36mray::unlearn()[39m (pid=5924, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 174, in unlearn
+    import unlearn_corpus
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 10, in <module>
+    from transformers import AdamW, AutoTokenizer, AutoModelForCausalLM
+ImportError: cannot import name 'AdamW' from 'transformers' (/usr/local/lib/python3.12/dist-packages/transformers/__init__.py)
+
+            Traceback:
+Traceback (most recent call last):
+  File "/workspace/unlearning_evaluation/pipeline.py", line 392, in main
+    ) = ray.get(ref)
+        ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ImportError): [36mray::unlearn()[39m (pid=5924, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 174, in unlearn
+    import unlearn_corpus
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 10, in <module>
+    from transformers import AdamW, AutoTokenizer, AutoModelForCausalLM
+ImportError: cannot import name 'AdamW' from 'transformers' (/usr/local/lib/python3.12/dist-packages/transformers/__init__.py)
+        
+
+--- Error at 2026-06-06 04:55:23.430123-07:00 ---
+            Exception in main:
+[36mray::unlearn()[39m (pid=5933, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 174, in unlearn
+    import unlearn_corpus
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 10, in <module>
+    from transformers import AdamW, AutoTokenizer, AutoModelForCausalLM
+ImportError: cannot import name 'AdamW' from 'transformers' (/usr/local/lib/python3.12/dist-packages/transformers/__init__.py)
+
+            Traceback:
+Traceback (most recent call last):
+  File "/workspace/unlearning_evaluation/pipeline.py", line 392, in main
+    ) = ray.get(ref)
+        ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ImportError): [36mray::unlearn()[39m (pid=5933, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 174, in unlearn
+    import unlearn_corpus
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 10, in <module>
+    from transformers import AdamW, AutoTokenizer, AutoModelForCausalLM
+ImportError: cannot import name 'AdamW' from 'transformers' (/usr/local/lib/python3.12/dist-packages/transformers/__init__.py)
+        
+
+--- Error at 2026-06-06 04:55:26.120356-07:00 ---
+            Exception in main:
+[36mray::unlearn()[39m (pid=5925, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 174, in unlearn
+    import unlearn_corpus
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 10, in <module>
+    from transformers import AdamW, AutoTokenizer, AutoModelForCausalLM
+ImportError: cannot import name 'AdamW' from 'transformers' (/usr/local/lib/python3.12/dist-packages/transformers/__init__.py)
+
+            Traceback:
+Traceback (most recent call last):
+  File "/workspace/unlearning_evaluation/pipeline.py", line 392, in main
+    ) = ray.get(ref)
+        ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ImportError): [36mray::unlearn()[39m (pid=5925, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 174, in unlearn
+    import unlearn_corpus
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 10, in <module>
+    from transformers import AdamW, AutoTokenizer, AutoModelForCausalLM
+ImportError: cannot import name 'AdamW' from 'transformers' (/usr/local/lib/python3.12/dist-packages/transformers/__init__.py)
+        
+
+--- Error at 2026-06-06 04:57:57.982975-07:00 ---
+            Exception in main:
+[36mray::unlearn()[39m (pid=9181, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 183, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 728, in main
+    eval(0); evaled_0 = True
+    ^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 597, in eval
+    forget_eval_loss, forget_acc, forget_logits_local = get_loss_and_acc(model, tokens, last_pos_label_ids_forget_local, label_possibilities)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 132, in get_loss_and_acc
+    return loss, acc, logits[:, label_possibilities].detach().cpu().numpy()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Got unsupported ScalarType BFloat16
+
+            Traceback:
+Traceback (most recent call last):
+  File "/workspace/unlearning_evaluation/pipeline.py", line 392, in main
+    ) = ray.get(ref)
+        ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TypeError): [36mray::unlearn()[39m (pid=9181, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 183, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 728, in main
+    eval(0); evaled_0 = True
+    ^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 597, in eval
+    forget_eval_loss, forget_acc, forget_logits_local = get_loss_and_acc(model, tokens, last_pos_label_ids_forget_local, label_possibilities)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 132, in get_loss_and_acc
+    return loss, acc, logits[:, label_possibilities].detach().cpu().numpy()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Got unsupported ScalarType BFloat16
+        
+
+--- Error at 2026-06-06 04:57:57.983267-07:00 ---
+            Exception in main:
+[36mray::unlearn()[39m (pid=9184, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 183, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 728, in main
+    eval(0); evaled_0 = True
+    ^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 597, in eval
+    forget_eval_loss, forget_acc, forget_logits_local = get_loss_and_acc(model, tokens, last_pos_label_ids_forget_local, label_possibilities)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 132, in get_loss_and_acc
+    return loss, acc, logits[:, label_possibilities].detach().cpu().numpy()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Got unsupported ScalarType BFloat16
+
+            Traceback:
+Traceback (most recent call last):
+  File "/workspace/unlearning_evaluation/pipeline.py", line 392, in main
+    ) = ray.get(ref)
+        ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TypeError): [36mray::unlearn()[39m (pid=9184, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 183, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 728, in main
+    eval(0); evaled_0 = True
+    ^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 597, in eval
+    forget_eval_loss, forget_acc, forget_logits_local = get_loss_and_acc(model, tokens, last_pos_label_ids_forget_local, label_possibilities)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 132, in get_loss_and_acc
+    return loss, acc, logits[:, label_possibilities].detach().cpu().numpy()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Got unsupported ScalarType BFloat16
+        
+
+--- Error at 2026-06-06 04:58:08.544907-07:00 ---
+            Exception in main:
+[36mray::unlearn()[39m (pid=9185, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 183, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 728, in main
+    eval(0); evaled_0 = True
+    ^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 597, in eval
+    forget_eval_loss, forget_acc, forget_logits_local = get_loss_and_acc(model, tokens, last_pos_label_ids_forget_local, label_possibilities)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 132, in get_loss_and_acc
+    return loss, acc, logits[:, label_possibilities].detach().cpu().numpy()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Got unsupported ScalarType BFloat16
+
+            Traceback:
+Traceback (most recent call last):
+  File "/workspace/unlearning_evaluation/pipeline.py", line 392, in main
+    ) = ray.get(ref)
+        ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TypeError): [36mray::unlearn()[39m (pid=9185, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 183, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 728, in main
+    eval(0); evaled_0 = True
+    ^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 597, in eval
+    forget_eval_loss, forget_acc, forget_logits_local = get_loss_and_acc(model, tokens, last_pos_label_ids_forget_local, label_possibilities)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 132, in get_loss_and_acc
+    return loss, acc, logits[:, label_possibilities].detach().cpu().numpy()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Got unsupported ScalarType BFloat16
+        
+
+--- Error at 2026-06-06 04:58:08.689380-07:00 ---
+            Exception in main:
+[36mray::unlearn()[39m (pid=9182, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 183, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 728, in main
+    eval(0); evaled_0 = True
+    ^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 597, in eval
+    forget_eval_loss, forget_acc, forget_logits_local = get_loss_and_acc(model, tokens, last_pos_label_ids_forget_local, label_possibilities)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 132, in get_loss_and_acc
+    return loss, acc, logits[:, label_possibilities].detach().cpu().numpy()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Got unsupported ScalarType BFloat16
+
+            Traceback:
+Traceback (most recent call last):
+  File "/workspace/unlearning_evaluation/pipeline.py", line 392, in main
+    ) = ray.get(ref)
+        ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TypeError): [36mray::unlearn()[39m (pid=9182, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 183, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 728, in main
+    eval(0); evaled_0 = True
+    ^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 597, in eval
+    forget_eval_loss, forget_acc, forget_logits_local = get_loss_and_acc(model, tokens, last_pos_label_ids_forget_local, label_possibilities)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 132, in get_loss_and_acc
+    return loss, acc, logits[:, label_possibilities].detach().cpu().numpy()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Got unsupported ScalarType BFloat16
+        
+
+--- Error at 2026-06-06 04:58:18.505295-07:00 ---
+            Exception in main:
+[36mray::unlearn()[39m (pid=9186, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 183, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 728, in main
+    eval(0); evaled_0 = True
+    ^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 597, in eval
+    forget_eval_loss, forget_acc, forget_logits_local = get_loss_and_acc(model, tokens, last_pos_label_ids_forget_local, label_possibilities)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 132, in get_loss_and_acc
+    return loss, acc, logits[:, label_possibilities].detach().cpu().numpy()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Got unsupported ScalarType BFloat16
+
+            Traceback:
+Traceback (most recent call last):
+  File "/workspace/unlearning_evaluation/pipeline.py", line 392, in main
+    ) = ray.get(ref)
+        ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TypeError): [36mray::unlearn()[39m (pid=9186, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 183, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 728, in main
+    eval(0); evaled_0 = True
+    ^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 597, in eval
+    forget_eval_loss, forget_acc, forget_logits_local = get_loss_and_acc(model, tokens, last_pos_label_ids_forget_local, label_possibilities)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 132, in get_loss_and_acc
+    return loss, acc, logits[:, label_possibilities].detach().cpu().numpy()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Got unsupported ScalarType BFloat16
+        
+
+--- Error at 2026-06-06 04:58:18.578584-07:00 ---
+            Exception in main:
+[36mray::unlearn()[39m (pid=9183, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 183, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 728, in main
+    eval(0); evaled_0 = True
+    ^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 597, in eval
+    forget_eval_loss, forget_acc, forget_logits_local = get_loss_and_acc(model, tokens, last_pos_label_ids_forget_local, label_possibilities)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 132, in get_loss_and_acc
+    return loss, acc, logits[:, label_possibilities].detach().cpu().numpy()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Got unsupported ScalarType BFloat16
+
+            Traceback:
+Traceback (most recent call last):
+  File "/workspace/unlearning_evaluation/pipeline.py", line 392, in main
+    ) = ray.get(ref)
+        ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TypeError): [36mray::unlearn()[39m (pid=9183, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 183, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 728, in main
+    eval(0); evaled_0 = True
+    ^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 597, in eval
+    forget_eval_loss, forget_acc, forget_logits_local = get_loss_and_acc(model, tokens, last_pos_label_ids_forget_local, label_possibilities)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 132, in get_loss_and_acc
+    return loss, acc, logits[:, label_possibilities].detach().cpu().numpy()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Got unsupported ScalarType BFloat16
+        
+
+--- Error at 2026-06-06 04:58:28.933422-07:00 ---
+            Exception in main:
+[36mray::unlearn()[39m (pid=9188, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 183, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 728, in main
+    eval(0); evaled_0 = True
+    ^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 597, in eval
+    forget_eval_loss, forget_acc, forget_logits_local = get_loss_and_acc(model, tokens, last_pos_label_ids_forget_local, label_possibilities)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 132, in get_loss_and_acc
+    return loss, acc, logits[:, label_possibilities].detach().cpu().numpy()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Got unsupported ScalarType BFloat16
+
+            Traceback:
+Traceback (most recent call last):
+  File "/workspace/unlearning_evaluation/pipeline.py", line 392, in main
+    ) = ray.get(ref)
+        ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TypeError): [36mray::unlearn()[39m (pid=9188, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 183, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 728, in main
+    eval(0); evaled_0 = True
+    ^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 597, in eval
+    forget_eval_loss, forget_acc, forget_logits_local = get_loss_and_acc(model, tokens, last_pos_label_ids_forget_local, label_possibilities)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 132, in get_loss_and_acc
+    return loss, acc, logits[:, label_possibilities].detach().cpu().numpy()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Got unsupported ScalarType BFloat16
+        
+
+--- Error at 2026-06-06 04:58:29.150549-07:00 ---
+            Exception in main:
+[36mray::unlearn()[39m (pid=9189, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 183, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 728, in main
+    eval(0); evaled_0 = True
+    ^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 597, in eval
+    forget_eval_loss, forget_acc, forget_logits_local = get_loss_and_acc(model, tokens, last_pos_label_ids_forget_local, label_possibilities)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 132, in get_loss_and_acc
+    return loss, acc, logits[:, label_possibilities].detach().cpu().numpy()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Got unsupported ScalarType BFloat16
+
+            Traceback:
+Traceback (most recent call last):
+  File "/workspace/unlearning_evaluation/pipeline.py", line 392, in main
+    ) = ray.get(ref)
+        ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TypeError): [36mray::unlearn()[39m (pid=9189, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 183, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 728, in main
+    eval(0); evaled_0 = True
+    ^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 597, in eval
+    forget_eval_loss, forget_acc, forget_logits_local = get_loss_and_acc(model, tokens, last_pos_label_ids_forget_local, label_possibilities)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 132, in get_loss_and_acc
+    return loss, acc, logits[:, label_possibilities].detach().cpu().numpy()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Got unsupported ScalarType BFloat16
+        
+
+--- Error at 2026-06-06 04:58:39.946597-07:00 ---
+            Exception in main:
+[36mray::unlearn()[39m (pid=9197, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 183, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 728, in main
+    eval(0); evaled_0 = True
+    ^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 597, in eval
+    forget_eval_loss, forget_acc, forget_logits_local = get_loss_and_acc(model, tokens, last_pos_label_ids_forget_local, label_possibilities)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 132, in get_loss_and_acc
+    return loss, acc, logits[:, label_possibilities].detach().cpu().numpy()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Got unsupported ScalarType BFloat16
+
+            Traceback:
+Traceback (most recent call last):
+  File "/workspace/unlearning_evaluation/pipeline.py", line 392, in main
+    ) = ray.get(ref)
+        ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TypeError): [36mray::unlearn()[39m (pid=9197, ip=172.25.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 183, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 728, in main
+    eval(0); evaled_0 = True
+    ^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 597, in eval
+    forget_eval_loss, forget_acc, forget_logits_local = get_loss_and_acc(model, tokens, last_pos_label_ids_forget_local, label_possibilities)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 132, in get_loss_and_acc
+    return loss, acc, logits[:, label_possibilities].detach().cpu().numpy()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Got unsupported ScalarType BFloat16
+        
