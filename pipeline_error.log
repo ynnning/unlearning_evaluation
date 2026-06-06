@@ -1,0 +1,449 @@
+--- Error at 2026-06-06 08:20:23.917369-07:00 ---
+            Exception in main:
+[36mray::unlearn()[39m (pid=4784, ip=172.20.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 184, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 508, in main
+    model = AutoModelForCausalLM.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/auto/auto_factory.py", line 404, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 4264, in from_pretrained
+    model = cls(config, *model_args, **model_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/mistral/modeling_mistral.py", line 408, in __init__
+    super().__init__(config)
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1351, in __init__
+    self.config._attn_implementation_internal = self._check_and_adjust_attn_implementation(
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1978, in _check_and_adjust_attn_implementation
+    applicable_attn_implementation = self.get_correct_attn_implementation(
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 2025, in get_correct_attn_implementation
+    self._flash_attn_can_dispatch(flash_attn_version=fa_version, is_init_check=is_init_check)
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1759, in _flash_attn_can_dispatch
+    self._flash_attn_import_error(**FLASH_ATTENTION_COMPATIBILITY_MATRIX[flash_attn_version])
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1714, in _flash_attn_import_error
+    raise ImportError(
+ImportError: FlashAttention2 has been toggled on, but it cannot be used due to the following error: the package for FlashAttention2 doesn't seem to be installed.
+
+            Traceback:
+Traceback (most recent call last):
+  File "/workspace/unlearning_evaluation/pipeline.py", line 393, in main
+    ) = ray.get(ref)
+        ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ImportError): [36mray::unlearn()[39m (pid=4784, ip=172.20.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 184, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 508, in main
+    model = AutoModelForCausalLM.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/auto/auto_factory.py", line 404, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 4264, in from_pretrained
+    model = cls(config, *model_args, **model_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/mistral/modeling_mistral.py", line 408, in __init__
+    super().__init__(config)
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1351, in __init__
+    self.config._attn_implementation_internal = self._check_and_adjust_attn_implementation(
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1978, in _check_and_adjust_attn_implementation
+    applicable_attn_implementation = self.get_correct_attn_implementation(
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 2025, in get_correct_attn_implementation
+    self._flash_attn_can_dispatch(flash_attn_version=fa_version, is_init_check=is_init_check)
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1759, in _flash_attn_can_dispatch
+    self._flash_attn_import_error(**FLASH_ATTENTION_COMPATIBILITY_MATRIX[flash_attn_version])
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1714, in _flash_attn_import_error
+    raise ImportError(
+ImportError: FlashAttention2 has been toggled on, but it cannot be used due to the following error: the package for FlashAttention2 doesn't seem to be installed.
+        
+
+--- Error at 2026-06-06 08:20:24.116429-07:00 ---
+            Exception in main:
+[36mray::unlearn()[39m (pid=4787, ip=172.20.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 184, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 508, in main
+    model = AutoModelForCausalLM.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/auto/auto_factory.py", line 404, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 4264, in from_pretrained
+    model = cls(config, *model_args, **model_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/mistral/modeling_mistral.py", line 408, in __init__
+    super().__init__(config)
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1351, in __init__
+    self.config._attn_implementation_internal = self._check_and_adjust_attn_implementation(
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1978, in _check_and_adjust_attn_implementation
+    applicable_attn_implementation = self.get_correct_attn_implementation(
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 2025, in get_correct_attn_implementation
+    self._flash_attn_can_dispatch(flash_attn_version=fa_version, is_init_check=is_init_check)
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1759, in _flash_attn_can_dispatch
+    self._flash_attn_import_error(**FLASH_ATTENTION_COMPATIBILITY_MATRIX[flash_attn_version])
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1714, in _flash_attn_import_error
+    raise ImportError(
+ImportError: FlashAttention2 has been toggled on, but it cannot be used due to the following error: the package for FlashAttention2 doesn't seem to be installed.
+
+            Traceback:
+Traceback (most recent call last):
+  File "/workspace/unlearning_evaluation/pipeline.py", line 393, in main
+    ) = ray.get(ref)
+        ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ImportError): [36mray::unlearn()[39m (pid=4787, ip=172.20.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 184, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 508, in main
+    model = AutoModelForCausalLM.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/auto/auto_factory.py", line 404, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 4264, in from_pretrained
+    model = cls(config, *model_args, **model_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/mistral/modeling_mistral.py", line 408, in __init__
+    super().__init__(config)
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1351, in __init__
+    self.config._attn_implementation_internal = self._check_and_adjust_attn_implementation(
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1978, in _check_and_adjust_attn_implementation
+    applicable_attn_implementation = self.get_correct_attn_implementation(
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 2025, in get_correct_attn_implementation
+    self._flash_attn_can_dispatch(flash_attn_version=fa_version, is_init_check=is_init_check)
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1759, in _flash_attn_can_dispatch
+    self._flash_attn_import_error(**FLASH_ATTENTION_COMPATIBILITY_MATRIX[flash_attn_version])
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1714, in _flash_attn_import_error
+    raise ImportError(
+ImportError: FlashAttention2 has been toggled on, but it cannot be used due to the following error: the package for FlashAttention2 doesn't seem to be installed.
+        
+
+--- Error at 2026-06-06 08:20:32.389492-07:00 ---
+            Exception in main:
+[36mray::unlearn()[39m (pid=4782, ip=172.20.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 184, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 508, in main
+    model = AutoModelForCausalLM.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/auto/auto_factory.py", line 404, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 4264, in from_pretrained
+    model = cls(config, *model_args, **model_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/mistral/modeling_mistral.py", line 408, in __init__
+    super().__init__(config)
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1351, in __init__
+    self.config._attn_implementation_internal = self._check_and_adjust_attn_implementation(
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1978, in _check_and_adjust_attn_implementation
+    applicable_attn_implementation = self.get_correct_attn_implementation(
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 2025, in get_correct_attn_implementation
+    self._flash_attn_can_dispatch(flash_attn_version=fa_version, is_init_check=is_init_check)
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1759, in _flash_attn_can_dispatch
+    self._flash_attn_import_error(**FLASH_ATTENTION_COMPATIBILITY_MATRIX[flash_attn_version])
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1714, in _flash_attn_import_error
+    raise ImportError(
+ImportError: FlashAttention2 has been toggled on, but it cannot be used due to the following error: the package for FlashAttention2 doesn't seem to be installed.
+
+            Traceback:
+Traceback (most recent call last):
+  File "/workspace/unlearning_evaluation/pipeline.py", line 393, in main
+    ) = ray.get(ref)
+        ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ImportError): [36mray::unlearn()[39m (pid=4782, ip=172.20.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 184, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 508, in main
+    model = AutoModelForCausalLM.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/auto/auto_factory.py", line 404, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 4264, in from_pretrained
+    model = cls(config, *model_args, **model_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/mistral/modeling_mistral.py", line 408, in __init__
+    super().__init__(config)
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1351, in __init__
+    self.config._attn_implementation_internal = self._check_and_adjust_attn_implementation(
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1978, in _check_and_adjust_attn_implementation
+    applicable_attn_implementation = self.get_correct_attn_implementation(
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 2025, in get_correct_attn_implementation
+    self._flash_attn_can_dispatch(flash_attn_version=fa_version, is_init_check=is_init_check)
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1759, in _flash_attn_can_dispatch
+    self._flash_attn_import_error(**FLASH_ATTENTION_COMPATIBILITY_MATRIX[flash_attn_version])
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1714, in _flash_attn_import_error
+    raise ImportError(
+ImportError: FlashAttention2 has been toggled on, but it cannot be used due to the following error: the package for FlashAttention2 doesn't seem to be installed.
+        
+
+--- Error at 2026-06-06 08:20:33.207891-07:00 ---
+            Exception in main:
+[36mray::unlearn()[39m (pid=4785, ip=172.20.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 184, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 508, in main
+    model = AutoModelForCausalLM.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/auto/auto_factory.py", line 404, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 4264, in from_pretrained
+    model = cls(config, *model_args, **model_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/mistral/modeling_mistral.py", line 408, in __init__
+    super().__init__(config)
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1351, in __init__
+    self.config._attn_implementation_internal = self._check_and_adjust_attn_implementation(
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1978, in _check_and_adjust_attn_implementation
+    applicable_attn_implementation = self.get_correct_attn_implementation(
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 2025, in get_correct_attn_implementation
+    self._flash_attn_can_dispatch(flash_attn_version=fa_version, is_init_check=is_init_check)
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1759, in _flash_attn_can_dispatch
+    self._flash_attn_import_error(**FLASH_ATTENTION_COMPATIBILITY_MATRIX[flash_attn_version])
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1714, in _flash_attn_import_error
+    raise ImportError(
+ImportError: FlashAttention2 has been toggled on, but it cannot be used due to the following error: the package for FlashAttention2 doesn't seem to be installed.
+
+            Traceback:
+Traceback (most recent call last):
+  File "/workspace/unlearning_evaluation/pipeline.py", line 393, in main
+    ) = ray.get(ref)
+        ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ImportError): [36mray::unlearn()[39m (pid=4785, ip=172.20.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 184, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 508, in main
+    model = AutoModelForCausalLM.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/auto/auto_factory.py", line 404, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 4264, in from_pretrained
+    model = cls(config, *model_args, **model_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/mistral/modeling_mistral.py", line 408, in __init__
+    super().__init__(config)
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1351, in __init__
+    self.config._attn_implementation_internal = self._check_and_adjust_attn_implementation(
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1978, in _check_and_adjust_attn_implementation
+    applicable_attn_implementation = self.get_correct_attn_implementation(
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 2025, in get_correct_attn_implementation
+    self._flash_attn_can_dispatch(flash_attn_version=fa_version, is_init_check=is_init_check)
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1759, in _flash_attn_can_dispatch
+    self._flash_attn_import_error(**FLASH_ATTENTION_COMPATIBILITY_MATRIX[flash_attn_version])
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1714, in _flash_attn_import_error
+    raise ImportError(
+ImportError: FlashAttention2 has been toggled on, but it cannot be used due to the following error: the package for FlashAttention2 doesn't seem to be installed.
+        
+
+--- Error at 2026-06-06 08:20:38.933742-07:00 ---
+            Exception in main:
+[36mray::unlearn()[39m (pid=4790, ip=172.20.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 184, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 508, in main
+    model = AutoModelForCausalLM.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/auto/auto_factory.py", line 404, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 4264, in from_pretrained
+    model = cls(config, *model_args, **model_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/mistral/modeling_mistral.py", line 408, in __init__
+    super().__init__(config)
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1351, in __init__
+    self.config._attn_implementation_internal = self._check_and_adjust_attn_implementation(
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1978, in _check_and_adjust_attn_implementation
+    applicable_attn_implementation = self.get_correct_attn_implementation(
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 2025, in get_correct_attn_implementation
+    self._flash_attn_can_dispatch(flash_attn_version=fa_version, is_init_check=is_init_check)
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1759, in _flash_attn_can_dispatch
+    self._flash_attn_import_error(**FLASH_ATTENTION_COMPATIBILITY_MATRIX[flash_attn_version])
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1714, in _flash_attn_import_error
+    raise ImportError(
+ImportError: FlashAttention2 has been toggled on, but it cannot be used due to the following error: the package for FlashAttention2 doesn't seem to be installed.
+
+            Traceback:
+Traceback (most recent call last):
+  File "/workspace/unlearning_evaluation/pipeline.py", line 393, in main
+    ) = ray.get(ref)
+        ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ImportError): [36mray::unlearn()[39m (pid=4790, ip=172.20.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 184, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 508, in main
+    model = AutoModelForCausalLM.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/auto/auto_factory.py", line 404, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 4264, in from_pretrained
+    model = cls(config, *model_args, **model_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/mistral/modeling_mistral.py", line 408, in __init__
+    super().__init__(config)
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1351, in __init__
+    self.config._attn_implementation_internal = self._check_and_adjust_attn_implementation(
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1978, in _check_and_adjust_attn_implementation
+    applicable_attn_implementation = self.get_correct_attn_implementation(
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 2025, in get_correct_attn_implementation
+    self._flash_attn_can_dispatch(flash_attn_version=fa_version, is_init_check=is_init_check)
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1759, in _flash_attn_can_dispatch
+    self._flash_attn_import_error(**FLASH_ATTENTION_COMPATIBILITY_MATRIX[flash_attn_version])
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1714, in _flash_attn_import_error
+    raise ImportError(
+ImportError: FlashAttention2 has been toggled on, but it cannot be used due to the following error: the package for FlashAttention2 doesn't seem to be installed.
+        
+
+--- Error at 2026-06-06 08:20:39.475652-07:00 ---
+            Exception in main:
+[36mray::unlearn()[39m (pid=4789, ip=172.20.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 184, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 508, in main
+    model = AutoModelForCausalLM.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/auto/auto_factory.py", line 404, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 4264, in from_pretrained
+    model = cls(config, *model_args, **model_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/mistral/modeling_mistral.py", line 408, in __init__
+    super().__init__(config)
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1351, in __init__
+    self.config._attn_implementation_internal = self._check_and_adjust_attn_implementation(
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1978, in _check_and_adjust_attn_implementation
+    applicable_attn_implementation = self.get_correct_attn_implementation(
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 2025, in get_correct_attn_implementation
+    self._flash_attn_can_dispatch(flash_attn_version=fa_version, is_init_check=is_init_check)
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1759, in _flash_attn_can_dispatch
+    self._flash_attn_import_error(**FLASH_ATTENTION_COMPATIBILITY_MATRIX[flash_attn_version])
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1714, in _flash_attn_import_error
+    raise ImportError(
+ImportError: FlashAttention2 has been toggled on, but it cannot be used due to the following error: the package for FlashAttention2 doesn't seem to be installed.
+
+            Traceback:
+Traceback (most recent call last):
+  File "/workspace/unlearning_evaluation/pipeline.py", line 393, in main
+    ) = ray.get(ref)
+        ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ImportError): [36mray::unlearn()[39m (pid=4789, ip=172.20.0.2)
+  File "/workspace/unlearning_evaluation/pipeline.py", line 184, in unlearn
+    unlearn_corpus.main(
+  File "/workspace/unlearning_evaluation/unlearn_corpus.py", line 508, in main
+    model = AutoModelForCausalLM.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/auto/auto_factory.py", line 404, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 4264, in from_pretrained
+    model = cls(config, *model_args, **model_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/mistral/modeling_mistral.py", line 408, in __init__
+    super().__init__(config)
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1351, in __init__
+    self.config._attn_implementation_internal = self._check_and_adjust_attn_implementation(
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1978, in _check_and_adjust_attn_implementation
+    applicable_attn_implementation = self.get_correct_attn_implementation(
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 2025, in get_correct_attn_implementation
+    self._flash_attn_can_dispatch(flash_attn_version=fa_version, is_init_check=is_init_check)
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1759, in _flash_attn_can_dispatch
+    self._flash_attn_import_error(**FLASH_ATTENTION_COMPATIBILITY_MATRIX[flash_attn_version])
+  File "/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py", line 1714, in _flash_attn_import_error
+    raise ImportError(
+ImportError: FlashAttention2 has been toggled on, but it cannot be used due to the following error: the package for FlashAttention2 doesn't seem to be installed.
+        
