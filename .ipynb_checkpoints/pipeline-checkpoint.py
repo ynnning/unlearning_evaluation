@@ -43,6 +43,7 @@ class Datasets(Enum):
     YEARS = auto()
     YEARS_TF = auto()
     MMLU = auto()
+    MMLU_2CAT = auto()
     WMDP_CORPUS = auto()
     WMDP_CORPUS_FINEWEB = auto()
     WMDP_CORPUS_MMLU = auto()
@@ -621,11 +622,12 @@ def main(
             raise e
 
 # MMLU categories to use for forget loss
-mmlu_cats_forget = ["STEM", "business", "chemistry", "culture", "geography"]
 
-mmlu_cats_retain = [
-"health", "history", "law", "philosophy", "social sciences"
-]
+mmlu_cats_forget = ["STEM", "chemistry", "business", "health", "geography"]
+mmlu_cats_retain = ["social sciences", "culture", "history", "law", "philosophy",]
+
+#mmlu_cats_forget = ["STEM", "business", "chemistry", "culture", "geography"]
+#mmlu_cats_retain = ["health", "history", "law", "philosophy", "social sciences"]
 
 # paths for different dataset
 datasets_dict = {
@@ -731,6 +733,34 @@ datasets_dict = {
         "val_retain_files": [
             f"mmlu_cats_random_trimmed/mmlu_{mmlu_cats_retain[i]}"
             for i in range(5)
+        ],
+        "dev_file": "mmlu_cats_random_trimmed/dev",
+        "retain_dev_file": "mmlu_cats_random_trimmed/dev",
+    },
+    Datasets.MMLU_2CAT: {
+        "unlearn_files": [
+            f"mmlu_cats_random_trimmed/corpus_mmlu_{mmlu_cats_forget[i]}"
+            for i in range(2)
+        ],
+        "wrong_unlearn_files": [
+            f"mmlu_cats_random_trimmed/whp_corpus_mmlu_{mmlu_cats_forget[i]}"
+            for i in range(2)
+        ],
+        "fixed_wrong_unlearn_files": [
+            f"mmlu_cats_random_trimmed/fwf_corpus_mmlu_{mmlu_cats_forget[i]}"
+            for i in range(2)
+        ],
+        "val_files": [
+            f"mmlu_cats_random_trimmed/mmlu_{mmlu_cats_forget[i]}"
+            for i in range(2)
+        ],
+        "retain_files": [
+            f"mmlu_cats_random_trimmed/corpus_mmlu_{mmlu_cats_retain[i]}"
+            for i in range(2)
+        ],
+        "val_retain_files": [
+            f"mmlu_cats_random_trimmed/mmlu_{mmlu_cats_retain[i]}"
+            for i in range(2)
         ],
         "dev_file": "mmlu_cats_random_trimmed/dev",
         "retain_dev_file": "mmlu_cats_random_trimmed/dev",
@@ -1041,7 +1071,7 @@ def get_num_gpus():
         return 0
 
 
-config_file = "gd_ent"
+config_file = "gd_ent_2cat"
 
 # The main function that reads configurations from hydra config files and calls
 # `main()` for each unlearning configuration
