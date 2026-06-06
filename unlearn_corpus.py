@@ -7,7 +7,8 @@ from typing import Optional, TypedDict
 import numpy as np
 import torch
 from torch.utils.data import DataLoader, Dataset
-from transformers import AdamW, AutoTokenizer, AutoModelForCausalLM
+from transformers import AutoTokenizer, AutoModelForCausalLM
+from torch.optim import AdamW
 from ray.experimental.tqdm_ray import tqdm
 import wandb
 import ray
@@ -128,7 +129,7 @@ def get_loss_and_acc(
     acc = (logits.argmax(dim=-1) == last_pos_label_ids).float().sum().item()
     if unlearn_type.value == UnlearnType.GD.value:
         loss = -loss
-    return loss, acc, logits[:, label_possibilities].detach().cpu().numpy()
+    return loss, acc, logits[:, label_possibilities].detach().cpu().float().numpy()
 
 doc_to_choice = ["A", "B", "C", "D"]
 
