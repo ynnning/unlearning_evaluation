@@ -18,7 +18,7 @@ num_gpus: 2
 model_id: "HuggingFaceH4/zephyr-7b-beta"
 num_layers: ${get_num_layers:${model_id}}
 datasets: [MMLU_2CAT]
-wandb_project_name: "experiment_2d_stemchem_vs_socialculture_v3_sweep"
+wandb_project_name: "experiment_2d_stemcul_vs_chemsocial_v3_sweep"
 results_dir: "evals/pipeline"
 batch_size: 4
 val_batch_size: 8
@@ -258,7 +258,7 @@ ft:
   freeze_layers_coeffs: null
   freeze_layers: ${resolve_freeze_layers:${ft.freeze_layers_coeffs}, ${model_id}}
   epochs_lst: [6]
-  lrs: ${get_log_range:1e-7,5e-6,2}
+  lrs:  [1e-7, 1e-6, 5e-6] #${get_log_range:1e-7,5e-6,2}
   save_models: false
 
 
