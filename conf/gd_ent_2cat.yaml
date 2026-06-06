@@ -126,7 +126,7 @@ unlearn:
             add: [0.01, 0.1, 1, 10]
         MMLU_1CAT:
           epochs_lst: [10]
-          lrs: [4e-07, 8e-07]
+          lrs: [4e-07,  6e-07, 8e-07]
           rcs:
             range: [] #${get_log_range:1e-3, 1e3, 10}
             add: [1]
