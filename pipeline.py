@@ -624,12 +624,16 @@ def main(
 
 # MMLU categories to use for forget loss
 
+
+mmlu_cats_forget = ["chemistry", "culture", "business", "health", "geography"]
+mmlu_cats_retain = ["STEM", "social sciences", "history", "law", "philosophy",]
+
 #mmlu_cats_forget = ["STEM", "chemistry", "business", "health", "geography"]
 #mmlu_cats_retain = ["culture", "social sciences", "history", "law", "philosophy",]
 
 
-mmlu_cats_forget = ["STEM", "culture", "business", "health", "geography"]
-mmlu_cats_retain = ["chemistry", "social sciences", "history", "law", "philosophy",]
+#mmlu_cats_forget = ["STEM", "culture", "business", "health", "geography"]
+#mmlu_cats_retain = ["chemistry", "social sciences", "history", "law", "philosophy",]
 
 #mmlu_cats_forget = ["STEM", "chemistry", "business", "health", "geography"]
 #mmlu_cats_retain = ["social sciences", "culture", "history", "law", "philosophy",]
