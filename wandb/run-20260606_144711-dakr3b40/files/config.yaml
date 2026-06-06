@@ -1,0 +1,749 @@
+_wandb:
+    value:
+        cli_version: 0.27.2
+        e:
+            m184e369ug5aovyju76fqoax0lvt9uig:
+                args:
+                    - --config-name
+                    - gd_ent_2cat
+                codePath: pipeline.py
+                codePathLocal: pipeline.py
+                cpu_count: 104
+                cpu_count_logical: 208
+                cudaVersion: "13.0"
+                disk:
+                    /:
+                        total: "32212254720"
+                        used: "1562603520"
+                email: ynnning@gmail.com
+                executable: /usr/local/bin/python
+                git:
+                    commit: a188295a7ecdbddf689eeafdd2ee521a2fc8952c
+                    remote: https://github.com/ynnning/unlearning_evaluation.git
+                gpu: NVIDIA H100 80GB HBM3
+                gpu_count: 2
+                gpu_nvidia:
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "85520809984"
+                      name: NVIDIA H100 80GB HBM3
+                      uuid: GPU-a6fd3dca-0374-e614-5f5d-38371aea5b8b
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "85520809984"
+                      name: NVIDIA H100 80GB HBM3
+                      uuid: GPU-a83d0675-7b01-1772-2990-e018a04676b2
+                host: 34d4bfddbfaf
+                memory:
+                    total: "2164110815232"
+                os: Linux-6.8.0-90-generic-x86_64-with-glibc2.39
+                program: /workspace/unlearning_evaluation/pipeline.py
+                python: CPython 3.12.3
+                root: /workspace/unlearning_evaluation
+                startedAt: "2026-06-06T14:47:11.616351Z"
+                writerId: m184e369ug5aovyju76fqoax0lvt9uig
+        m: []
+        python_version: 3.12.3
+        t:
+            "1":
+                - 1
+                - 11
+                - 30
+                - 49
+                - 50
+                - 71
+            "2":
+                - 1
+                - 11
+                - 30
+                - 49
+                - 50
+                - 71
+            "3":
+                - 2
+                - 13
+                - 16
+            "4": 3.12.3
+            "5": 0.27.2
+            "6": 5.10.2
+            "12": 0.27.2
+            "13": linux-x86_64
+batch_size:
+    value: 4
+data_seed:
+    value: 4
+datasets:
+    value:
+        - MMLU
+dont_ft:
+    value: false
+eval_every:
+    value: 1
+eval_model_paths:
+    value:
+        - ""
+ft.epochs_lst:
+    value:
+        - 6
+ft.freeze_layers:
+    value: null
+ft.freeze_layers_coeffs:
+    value: null
+ft.loss_types:
+    value:
+        - QUESTION_LETTER_ANSWER
+ft.lrs:
+    value:
+        - 1e-07
+        - 2e-07
+        - 4e-07
+        - 8e-07
+        - 1.6e-06
+        - 3.2e-06
+ft.num_splits:
+    value: 2
+ft.save_models:
+    value: false
+ft_model_paths:
+    value:
+        - - meta-llama/Meta-Llama-3-8B
+          - WMDP
+just_eval:
+    value: false
+model_id:
+    value: HuggingFaceH4/zephyr-7b-beta
+num_gpus:
+    value: 2
+num_layers:
+    value: 32
+only_ft:
+    value: false
+raise_exceptions:
+    value: false
+results_dir:
+    value: evals/pipeline
+testing:
+    value: false
+unlearn.cut_scs:
+    value:
+        - 0.1
+        - 1
+        - 10
+unlearn.freeze_layers:
+    value: null
+unlearn.freeze_layers_coeffs:
+    value: null
+unlearn.many_cut_sc:
+    value: true
+unlearn.save_unlearn_model:
+    value: true
+unlearn.types:
+    value:
+        - GD
+unlearn.types_config.CUT.datasets_config.MMLU.epochs_lst:
+    value:
+        - 5
+unlearn.types_config.CUT.datasets_config.MMLU.lrs:
+    value:
+        - 4e-07
+unlearn.types_config.CUT.datasets_config.MMLU.rcs.add:
+    value:
+        - 0
+        - 1200
+unlearn.types_config.CUT.datasets_config.MMLU.rcs.range:
+    value:
+        - 100
+        - 1000
+        - 10000
+unlearn.types_config.CUT.datasets_config.RANDOM_BD.epochs_lst:
+    value:
+        - 5
+unlearn.types_config.CUT.datasets_config.RANDOM_BD.lrs:
+    value:
+        - 4e-07
+unlearn.types_config.CUT.datasets_config.RANDOM_BD.rcs.add:
+    value:
+        - 0
+        - 1200
+unlearn.types_config.CUT.datasets_config.RANDOM_BD.rcs.range:
+    value:
+        - 0.01
+        - 0.1
+        - 1
+        - 10
+        - 100
+        - 1000
+        - 10000
+unlearn.types_config.CUT.datasets_config.WMDP_CORPUS.epochs_lst:
+    value:
+        - 5
+unlearn.types_config.CUT.datasets_config.WMDP_CORPUS.lrs:
+    value:
+        - 4e-07
+unlearn.types_config.CUT.datasets_config.WMDP_CORPUS.rcs.add:
+    value:
+        - 0
+unlearn.types_config.CUT.datasets_config.WMDP_CORPUS.rcs.range:
+    value:
+        - 0.01
+        - 0.1
+        - 1
+        - 10
+        - 100
+        - 1000
+        - 10000
+unlearn.types_config.CUT.datasets_config.WMDP_CORPUS_FINEWEB.epochs_lst:
+    value:
+        - 5
+unlearn.types_config.CUT.datasets_config.WMDP_CORPUS_FINEWEB.lrs:
+    value:
+        - 4e-07
+unlearn.types_config.CUT.datasets_config.WMDP_CORPUS_FINEWEB.rcs.add:
+    value: []
+unlearn.types_config.CUT.datasets_config.WMDP_CORPUS_FINEWEB.rcs.range:
+    value:
+        - 0.01
+        - 0.1
+        - 1
+        - 10
+        - 100
+        - 1000
+        - 10000
+unlearn.types_config.CUT.datasets_config.WMDP_MCQ_CORPUS.epochs_lst:
+    value:
+        - 5
+unlearn.types_config.CUT.datasets_config.WMDP_MCQ_CORPUS.lrs:
+    value:
+        - 4e-07
+unlearn.types_config.CUT.datasets_config.WMDP_MCQ_CORPUS.rcs.add:
+    value: []
+unlearn.types_config.CUT.datasets_config.WMDP_MCQ_CORPUS.rcs.range:
+    value:
+        - 100
+        - 200
+        - 400
+        - 800
+        - 1600
+        - 3200
+        - 6400
+unlearn.types_config.CUT.datasets_config.WMDP_MCQ_CORPUS_FINEWEB.epochs_lst:
+    value:
+        - 1
+        - 2
+unlearn.types_config.CUT.datasets_config.WMDP_MCQ_CORPUS_FINEWEB.lrs:
+    value:
+        - 2e-05
+        - 4e-05
+        - 8e-05
+unlearn.types_config.CUT.datasets_config.WMDP_MCQ_CORPUS_FINEWEB.rcs.add:
+    value: []
+unlearn.types_config.CUT.datasets_config.WMDP_MCQ_CORPUS_FINEWEB.rcs.range:
+    value:
+        - 100
+        - 200
+        - 400
+        - 800
+        - 1600
+        - 3200
+        - 6400
+unlearn.types_config.CUT.datasets_config.WMDP_MCQ_FINEWEB.epochs_lst:
+    value:
+        - 1
+unlearn.types_config.CUT.datasets_config.WMDP_MCQ_FINEWEB.lrs:
+    value:
+        - 4e-05
+unlearn.types_config.CUT.datasets_config.WMDP_MCQ_FINEWEB.rcs.add:
+    value: []
+unlearn.types_config.CUT.datasets_config.WMDP_MCQ_FINEWEB.rcs.range:
+    value:
+        - 100
+        - 200
+        - 400
+        - 800
+        - 1600
+        - 3200
+        - 6400
+unlearn.types_config.CUT.datasets_config.YEARS.epochs_lst:
+    value:
+        - 5
+unlearn.types_config.CUT.datasets_config.YEARS.lrs:
+    value:
+        - 4e-07
+unlearn.types_config.CUT.datasets_config.YEARS.rcs.add:
+    value:
+        - 0
+        - 1200
+unlearn.types_config.CUT.datasets_config.YEARS.rcs.range:
+    value:
+        - 100
+        - 1000
+        - 10000
+unlearn.types_config.CUT.datasets_config.YEARS_MMLU_RETAIN.epochs_lst:
+    value:
+        - 5
+unlearn.types_config.CUT.datasets_config.YEARS_MMLU_RETAIN.lrs:
+    value:
+        - 4e-07
+unlearn.types_config.CUT.datasets_config.YEARS_MMLU_RETAIN.rcs.add:
+    value:
+        - 0
+        - 1200
+unlearn.types_config.CUT.datasets_config.YEARS_MMLU_RETAIN.rcs.range:
+    value:
+        - 100
+        - 1000
+        - 10000
+unlearn.types_config.CUT.loss_type:
+    value: CORPUS
+unlearn.types_config.FWF.datasets_config.MMLU.epochs_lst:
+    value:
+        - 5
+unlearn.types_config.FWF.datasets_config.MMLU.lrs:
+    value:
+        - 4e-07
+        - 8e-07
+unlearn.types_config.FWF.datasets_config.MMLU.rcs.add:
+    value:
+        - 0
+        - 2
+        - 4
+unlearn.types_config.FWF.datasets_config.MMLU.rcs.range:
+    value:
+        - 0.001
+        - 0.01
+        - 0.1
+        - 1
+        - 10
+        - 100
+unlearn.types_config.FWF.datasets_config.RANDOM_BD.epochs_lst:
+    value:
+        - 5
+unlearn.types_config.FWF.datasets_config.RANDOM_BD.lrs:
+    value:
+        - 4e-07
+        - 8e-07
+unlearn.types_config.FWF.datasets_config.RANDOM_BD.rcs.add:
+    value:
+        - 0
+        - 2
+        - 4
+unlearn.types_config.FWF.datasets_config.RANDOM_BD.rcs.range:
+    value:
+        - 0.001
+        - 0.01
+        - 0.1
+        - 1
+        - 10
+        - 100
+unlearn.types_config.FWF.datasets_config.WMDP_MCQ_CORPUS.epochs_lst:
+    value:
+        - 5
+unlearn.types_config.FWF.datasets_config.WMDP_MCQ_CORPUS.lrs:
+    value:
+        - 4e-07
+        - 8e-07
+        - 1.6e-06
+unlearn.types_config.FWF.datasets_config.WMDP_MCQ_CORPUS.rcs.add:
+    value:
+        - 0
+        - 2
+        - 4
+unlearn.types_config.FWF.datasets_config.WMDP_MCQ_CORPUS.rcs.range:
+    value:
+        - 0.001
+        - 0.01
+        - 0.1
+        - 1
+        - 10
+        - 100
+unlearn.types_config.FWF.datasets_config.YEARS.epochs_lst:
+    value:
+        - 5
+unlearn.types_config.FWF.datasets_config.YEARS.lrs:
+    value:
+        - 8e-07
+unlearn.types_config.FWF.datasets_config.YEARS.rcs.add:
+    value:
+        - 0
+        - 2
+        - 4
+unlearn.types_config.FWF.datasets_config.YEARS.rcs.range:
+    value:
+        - 0.001
+        - 0.01
+        - 0.1
+        - 1
+        - 10
+        - 100
+unlearn.types_config.FWF.datasets_config.YEARS_MMLU_RETAIN.epochs_lst:
+    value:
+        - 5
+unlearn.types_config.FWF.datasets_config.YEARS_MMLU_RETAIN.lrs:
+    value:
+        - 8e-07
+unlearn.types_config.FWF.datasets_config.YEARS_MMLU_RETAIN.rcs.add:
+    value:
+        - 0
+        - 2
+        - 4
+unlearn.types_config.FWF.datasets_config.YEARS_MMLU_RETAIN.rcs.range:
+    value:
+        - 0.001
+        - 0.01
+        - 0.1
+        - 1
+        - 10
+        - 100
+unlearn.types_config.FWF.loss_type:
+    value: CORPUS
+unlearn.types_config.GD.datasets_config.MMLU.epochs_lst:
+    value:
+        - 5
+unlearn.types_config.GD.datasets_config.MMLU.lrs:
+    value:
+        - 4e-07
+unlearn.types_config.GD.datasets_config.MMLU.rcs.add:
+    value:
+        - 0
+        - 2
+        - 4
+unlearn.types_config.GD.datasets_config.MMLU.rcs.range:
+    value:
+        - 0.001
+        - 0.01
+        - 0.1
+        - 1
+        - 10
+        - 100
+unlearn.types_config.GD.datasets_config.RANDOM_BD.epochs_lst:
+    value:
+        - 5
+unlearn.types_config.GD.datasets_config.RANDOM_BD.lrs:
+    value:
+        - 4e-07
+unlearn.types_config.GD.datasets_config.RANDOM_BD.rcs.add:
+    value:
+        - 0
+        - 2
+        - 4
+unlearn.types_config.GD.datasets_config.RANDOM_BD.rcs.range:
+    value:
+        - 0.001
+        - 0.01
+        - 0.1
+        - 1
+        - 10
+        - 100
+unlearn.types_config.GD.datasets_config.WMDP.epochs_lst:
+    value:
+        - 5
+unlearn.types_config.GD.datasets_config.WMDP.lrs:
+    value:
+        - 4e-07
+unlearn.types_config.GD.datasets_config.WMDP.rcs.add:
+    value:
+        - 0
+        - 2
+        - 4
+unlearn.types_config.GD.datasets_config.WMDP.rcs.range:
+    value:
+        - 0.001
+        - 0.01
+        - 0.1
+        - 1
+        - 10
+        - 100
+unlearn.types_config.GD.datasets_config.WMDP_CORPUS.epochs_lst:
+    value:
+        - 2
+unlearn.types_config.GD.datasets_config.WMDP_CORPUS.lrs:
+    value:
+        - 4e-07
+        - 8e-07
+        - 1.6e-06
+        - 3.2e-06
+unlearn.types_config.GD.datasets_config.WMDP_CORPUS.rcs.add:
+    value:
+        - 0
+unlearn.types_config.GD.datasets_config.WMDP_CORPUS.rcs.range:
+    value:
+        - 0.01
+        - 0.1
+        - 1
+        - 10
+        - 100
+        - 1000
+        - 10000
+unlearn.types_config.GD.datasets_config.WMDP_CORPUS_FINEWEB.epochs_lst:
+    value:
+        - 2
+unlearn.types_config.GD.datasets_config.WMDP_CORPUS_FINEWEB.lrs:
+    value:
+        - 3.2e-06
+unlearn.types_config.GD.datasets_config.WMDP_CORPUS_FINEWEB.rcs.add:
+    value: []
+unlearn.types_config.GD.datasets_config.WMDP_CORPUS_FINEWEB.rcs.range:
+    value:
+        - 0.01
+        - 0.1
+        - 1
+        - 10
+        - 100
+        - 1000
+        - 10000
+unlearn.types_config.GD.datasets_config.WMDP_CORPUS_MMLU.epochs_lst:
+    value:
+        - 8
+unlearn.types_config.GD.datasets_config.WMDP_CORPUS_MMLU.lrs:
+    value:
+        - 1.6e-06
+        - 3.2e-06
+unlearn.types_config.GD.datasets_config.WMDP_CORPUS_MMLU.rcs.add:
+    value:
+        - 0
+unlearn.types_config.GD.datasets_config.WMDP_CORPUS_MMLU.rcs.range:
+    value:
+        - 0.01
+        - 0.1
+        - 1
+        - 10
+        - 100
+        - 1000
+        - 10000
+unlearn.types_config.GD.datasets_config.WMDP_MCQ_CORPUS.epochs_lst:
+    value:
+        - 2
+        - 4
+        - 8
+unlearn.types_config.GD.datasets_config.WMDP_MCQ_CORPUS.lrs:
+    value:
+        - 5e-08
+        - 1e-07
+        - 2e-07
+        - 4e-07
+        - 8e-07
+        - 1.6e-06
+        - 3.2e-06
+unlearn.types_config.GD.datasets_config.WMDP_MCQ_CORPUS.rcs.add:
+    value:
+        - 0
+        - 2
+        - 4
+unlearn.types_config.GD.datasets_config.WMDP_MCQ_CORPUS.rcs.range:
+    value:
+        - 0.001
+        - 0.01
+        - 0.1
+        - 1
+        - 10
+        - 100
+unlearn.types_config.GD.datasets_config.WMDP_MCQ_CORPUS_FINEWEB.epochs_lst:
+    value:
+        - 2
+unlearn.types_config.GD.datasets_config.WMDP_MCQ_CORPUS_FINEWEB.lrs:
+    value:
+        - 1.6e-06
+unlearn.types_config.GD.datasets_config.WMDP_MCQ_CORPUS_FINEWEB.rcs.add:
+    value:
+        - 2
+        - 8
+unlearn.types_config.GD.datasets_config.WMDP_MCQ_CORPUS_FINEWEB.rcs.range:
+    value:
+        - 0.001
+        - 0.01
+        - 0.1
+        - 1
+        - 10
+        - 100
+unlearn.types_config.GD.datasets_config.WMDP_MCQ_FINEWEB.epochs_lst:
+    value:
+        - 4
+unlearn.types_config.GD.datasets_config.WMDP_MCQ_FINEWEB.lrs:
+    value:
+        - 1.6e-06
+unlearn.types_config.GD.datasets_config.WMDP_MCQ_FINEWEB.rcs.add:
+    value:
+        - 0
+unlearn.types_config.GD.datasets_config.WMDP_MCQ_FINEWEB.rcs.range:
+    value:
+        - 0.1
+        - 0.2
+        - 0.4
+        - 0.8
+        - 1.6
+        - 3.2
+        - 6.4
+        - 12.8
+        - 25.6
+        - 51.2
+        - 102.4
+        - 204.8
+        - 409.6
+        - 819.2
+        - 1638.4
+        - 3276.8
+        - 6553.6
+unlearn.types_config.GD.datasets_config.YEARS.epochs_lst:
+    value:
+        - 5
+unlearn.types_config.GD.datasets_config.YEARS.lrs:
+    value:
+        - 4e-07
+unlearn.types_config.GD.datasets_config.YEARS.rcs.add:
+    value:
+        - 0
+        - 0.002
+unlearn.types_config.GD.datasets_config.YEARS.rcs.range:
+    value:
+        - 0.001
+        - 0.01
+        - 0.1
+        - 1
+        - 10
+        - 100
+unlearn.types_config.GD.datasets_config.YEARS_MMLU_RETAIN.epochs_lst:
+    value:
+        - 5
+unlearn.types_config.GD.datasets_config.YEARS_MMLU_RETAIN.lrs:
+    value:
+        - 4e-07
+unlearn.types_config.GD.datasets_config.YEARS_MMLU_RETAIN.rcs.add:
+    value:
+        - 0
+        - 0.002
+unlearn.types_config.GD.datasets_config.YEARS_MMLU_RETAIN.rcs.range:
+    value:
+        - 0.001
+        - 0.01
+        - 0.1
+        - 1
+        - 10
+        - 100
+unlearn.types_config.GD.loss_type:
+    value: CORPUS
+unlearn.types_config.WHP.datasets_config.MMLU.epochs_lst:
+    value:
+        - 5
+unlearn.types_config.WHP.datasets_config.MMLU.lrs:
+    value:
+        - 4e-07
+        - 8e-07
+unlearn.types_config.WHP.datasets_config.MMLU.rcs.add:
+    value:
+        - 0
+        - 2
+        - 4
+unlearn.types_config.WHP.datasets_config.MMLU.rcs.range:
+    value:
+        - 0.001
+        - 0.01
+        - 0.1
+        - 1
+        - 10
+        - 100
+unlearn.types_config.WHP.datasets_config.RANDOM_BD.epochs_lst:
+    value:
+        - 5
+unlearn.types_config.WHP.datasets_config.RANDOM_BD.lrs:
+    value:
+        - 4e-07
+        - 8e-07
+unlearn.types_config.WHP.datasets_config.RANDOM_BD.rcs.add:
+    value:
+        - 0
+        - 2
+        - 4
+unlearn.types_config.WHP.datasets_config.RANDOM_BD.rcs.range:
+    value:
+        - 0.001
+        - 0.01
+        - 0.1
+        - 1
+        - 10
+        - 100
+unlearn.types_config.WHP.datasets_config.WMDP_MCQ_CORPUS.epochs_lst:
+    value:
+        - 5
+unlearn.types_config.WHP.datasets_config.WMDP_MCQ_CORPUS.lrs:
+    value:
+        - 4e-07
+        - 8e-07
+        - 1.6e-06
+unlearn.types_config.WHP.datasets_config.WMDP_MCQ_CORPUS.rcs.add:
+    value:
+        - 0
+        - 2
+        - 4
+unlearn.types_config.WHP.datasets_config.WMDP_MCQ_CORPUS.rcs.range:
+    value:
+        - 0.001
+        - 0.01
+        - 0.1
+        - 1
+        - 10
+        - 100
+unlearn.types_config.WHP.datasets_config.WMDP_MCQ_CORPUS_FINEWEB.epochs_lst:
+    value:
+        - 5
+unlearn.types_config.WHP.datasets_config.WMDP_MCQ_CORPUS_FINEWEB.lrs:
+    value:
+        - 3.2e-06
+unlearn.types_config.WHP.datasets_config.WMDP_MCQ_CORPUS_FINEWEB.rcs.add:
+    value:
+        - 0
+        - 2
+        - 4
+unlearn.types_config.WHP.datasets_config.WMDP_MCQ_CORPUS_FINEWEB.rcs.range:
+    value:
+        - 0.001
+        - 0.01
+        - 0.1
+        - 1
+        - 10
+        - 100
+unlearn.types_config.WHP.datasets_config.YEARS.epochs_lst:
+    value:
+        - 5
+unlearn.types_config.WHP.datasets_config.YEARS.lrs:
+    value:
+        - 8e-07
+unlearn.types_config.WHP.datasets_config.YEARS.rcs.add:
+    value:
+        - 0
+        - 2
+        - 4
+unlearn.types_config.WHP.datasets_config.YEARS.rcs.range:
+    value:
+        - 0.001
+        - 0.01
+        - 0.1
+        - 1
+        - 10
+        - 100
+unlearn.types_config.WHP.datasets_config.YEARS_MMLU_RETAIN.epochs_lst:
+    value:
+        - 5
+unlearn.types_config.WHP.datasets_config.YEARS_MMLU_RETAIN.lrs:
+    value:
+        - 8e-07
+unlearn.types_config.WHP.datasets_config.YEARS_MMLU_RETAIN.rcs.add:
+    value:
+        - 0
+        - 2
+        - 4
+unlearn.types_config.WHP.datasets_config.YEARS_MMLU_RETAIN.rcs.range:
+    value:
+        - 0.001
+        - 0.01
+        - 0.1
+        - 1
+        - 10
+        - 100
+unlearn.types_config.WHP.loss_type:
+    value: CORPUS
+val_batch_size:
+    value: 8
+wandb_project_name:
+    value: default_setting_gd_2CAT
+warmup_steps:
+    value: 24

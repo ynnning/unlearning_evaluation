@@ -13,7 +13,7 @@ model_id: HuggingFaceH4/zephyr-7b-beta
 num_layers: ${get_num_layers:${model_id}}
 datasets:
 - MMLU
-wandb_project_name: default_setting_gd_baseline
+wandb_project_name: default_setting_gd_2CAT
 results_dir: evals/pipeline
 batch_size: 4
 val_batch_size: 8
@@ -162,8 +162,6 @@ unlearn:
             range: ${get_log_range:1e-3, 1e3, 10}
             add:
             - 0
-            - 2
-            - 4
         WMDP_CORPUS:
           epochs_lst:
           - 2

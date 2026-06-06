@@ -1,0 +1,65 @@
+{
+  "os": "Linux-6.8.0-90-generic-x86_64-with-glibc2.39",
+  "python": "CPython 3.12.3",
+  "startedAt": "2026-06-06T14:49:37.898368Z",
+  "args": [
+    "--node-ip-address=172.25.0.2",
+    "--node-manager-port=34559",
+    "--object-store-name=/tmp/ray/session_2026-06-06_14-49-20_848972_35493/sockets/plasma_store",
+    "--raylet-name=/tmp/ray/session_2026-06-06_14-49-20_848972_35493/sockets/raylet",
+    "--redis-address=None",
+    "--metrics-agent-port=0",
+    "--logging-rotate-bytes=536870912",
+    "--logging-rotate-backup-count=5",
+    "--runtime-env-agent-port=0",
+    "--gcs-address=172.25.0.2:39973",
+    "--session-name=session_2026-06-06_14-49-20_848972_35493",
+    "--temp-dir=/tmp/ray",
+    "--webui=",
+    "--cluster-id=53b3f2b9a87389600db9fb3744c727c014de48141477fabde21e4c28",
+    "--worker-id=ab68995194ce1411fb65e8f0a66eefd7983f48860c407fe8724126b1",
+    "--worker-launch-time-ms=1780757366200",
+    "--node-id=d90e985e1c482752de0e4b77efe82b80e5da74960fae8c2981a68b89",
+    "--runtime-env-hash=0"
+  ],
+  "program": "/usr/local/lib/python3.12/dist-packages/ray/_private/workers/default_worker.py",
+  "git": {
+    "remote": "https://github.com/ynnning/unlearning_evaluation.git",
+    "commit": "a188295a7ecdbddf689eeafdd2ee521a2fc8952c"
+  },
+  "email": "ynnning@gmail.com",
+  "root": "/workspace/unlearning_evaluation",
+  "host": "34d4bfddbfaf",
+  "executable": "/usr/local/bin/python",
+  "cpu_count": 104,
+  "cpu_count_logical": 208,
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "gpu_count": 2,
+  "disk": {
+    "/": {
+      "total": "32212254720",
+      "used": "1563717632"
+    }
+  },
+  "memory": {
+    "total": "2164110815232"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA H100 80GB HBM3",
+      "memoryTotal": "85520809984",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-a6fd3dca-0374-e614-5f5d-38371aea5b8b"
+    },
+    {
+      "name": "NVIDIA H100 80GB HBM3",
+      "memoryTotal": "85520809984",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-a83d0675-7b01-1772-2990-e018a04676b2"
+    }
+  ],
+  "cudaVersion": "13.0",
+  "writerId": "i0e7q065dkcftbgyredtonzid14fsmrv"
+}

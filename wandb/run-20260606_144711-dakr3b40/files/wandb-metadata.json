@@ -1,0 +1,51 @@
+{
+  "os": "Linux-6.8.0-90-generic-x86_64-with-glibc2.39",
+  "python": "CPython 3.12.3",
+  "startedAt": "2026-06-06T14:47:11.616351Z",
+  "args": [
+    "--config-name",
+    "gd_ent_2cat"
+  ],
+  "program": "/workspace/unlearning_evaluation/pipeline.py",
+  "codePath": "pipeline.py",
+  "codePathLocal": "pipeline.py",
+  "git": {
+    "remote": "https://github.com/ynnning/unlearning_evaluation.git",
+    "commit": "a188295a7ecdbddf689eeafdd2ee521a2fc8952c"
+  },
+  "email": "ynnning@gmail.com",
+  "root": "/workspace/unlearning_evaluation",
+  "host": "34d4bfddbfaf",
+  "executable": "/usr/local/bin/python",
+  "cpu_count": 104,
+  "cpu_count_logical": 208,
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "gpu_count": 2,
+  "disk": {
+    "/": {
+      "total": "32212254720",
+      "used": "1562603520"
+    }
+  },
+  "memory": {
+    "total": "2164110815232"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA H100 80GB HBM3",
+      "memoryTotal": "85520809984",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-a6fd3dca-0374-e614-5f5d-38371aea5b8b"
+    },
+    {
+      "name": "NVIDIA H100 80GB HBM3",
+      "memoryTotal": "85520809984",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-a83d0675-7b01-1772-2990-e018a04676b2"
+    }
+  ],
+  "cudaVersion": "13.0",
+  "writerId": "m184e369ug5aovyju76fqoax0lvt9uig"
+}
