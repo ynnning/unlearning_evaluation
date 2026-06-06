@@ -1,0 +1,9 @@
+wandb/
+models/
+__pycache__/
+evals/
+*.pyc
+.ipynb_checkpoints/
+.hydra/
+pipeline_error.log
+.~*
