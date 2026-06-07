@@ -624,8 +624,11 @@ def main(
 
 # MMLU categories to use for forget loss
 
-mmlu_cats_forget = ["STEM", "chemistry", "social sciences", "health", "geography"]
-mmlu_cats_retain = ["business", "culture", "history", "law", "philosophy",]
+mmlu_cats_forget = ["STEM", "business", "chemistry", "health", "geography"]
+mmlu_cats_retain = ["social sciences", "culture", "history", "law", "philosophy",]
+
+#mmlu_cats_forget = ["STEM", "chemistry", "social sciences", "health", "geography"]
+#mmlu_cats_retain = ["business", "culture", "history", "law", "philosophy",]
 
 
 #mmlu_cats_forget = ["culture", "chemistry", "business", "health", "geography"]
@@ -1121,7 +1124,7 @@ def get_num_gpus():
         return 0
 
 
-config_file = "gd_ent_2cat"
+config_file = "gd_asymmetry"
 
 # The main function that reads configurations from hydra config files and calls
 # `main()` for each unlearning configuration
