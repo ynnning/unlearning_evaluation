@@ -506,7 +506,7 @@ def main(
         model = model
     else:
         model = AutoModelForCausalLM.from_pretrained(
-            base_model, torch_dtype=torch.bfloat16, attn_implementation="flash_attention_2",
+            base_model, torch_dtype=torch.bfloat16, attn_implementation="eager",
         ).to(device)
 
     if freeze_layers is not None:

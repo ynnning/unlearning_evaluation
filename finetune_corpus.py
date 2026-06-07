@@ -316,7 +316,7 @@ def main(
 
     label_possibilities = [tokenizer.encode(f"{t}. ", add_special_tokens=False)[0] for t in doc_to_choice]
     model = AutoModelForCausalLM.from_pretrained(
-        base_model, torch_dtype=torch.float16, attn_implementation="flash_attention_2"
+        base_model, torch_dtype=torch.float16, attn_implementation="eager"
     ).to(device)
 
     if freeze_layers is not None:

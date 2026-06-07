@@ -138,7 +138,7 @@ def run_rmu(
             # print(f"loss: {loss.item():.4g} | unlearn_loss: {unlearn_loss.item():.4g} | retain_loss: {retain_loss.item():.4g} | param_change: {params[0].grad.abs().mean().item():.4g}")
             
             # ======= Logging ======
-            if args.verbose:
+            if args.verbose and idx % 100 == 0:
                 frozen_forget_activations = forward_with_cache(frozen_model, unlearn_inputs, module=frozen_module, no_grad=True).to(updated_model.device)
                 unlearn_cosine= torch.nn.functional.cosine_similarity(updated_forget_activations, frozen_forget_activations, dim=-1).mean()
                 retain_cosine = torch.nn.functional.cosine_similarity(updated_retain_activations, frozen_retain_activations, dim=-1).mean()
@@ -320,7 +320,7 @@ def main(
         module_str="{model_name}.model.layers[{layer_id}]",
         steering_coeff_list=[steering_coeff],
         max_num_batches=max_num_batches,
-        verbose=False,
+        verbose=True,
         seed=42,
         min_len=5,
         max_len=2000,
@@ -396,7 +396,6 @@ def main(
         project_name=wandb_project_name,
         just_eval=True,
         disable_wandb=True,
-	save_unlearn_model=False,
     )
 
     retain_accs_5_shot, retain_accs_5_shot_calibrated, retain_logits_5_shot_dict = {}, {}, {}
