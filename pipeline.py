@@ -43,6 +43,7 @@ class Datasets(Enum):
     YEARS = auto()
     YEARS_TF = auto()
     MMLU = auto()
+    MMLU_3CAT = auto()
     MMLU_2CAT = auto()
     MMLU_1CAT = auto()
     WMDP_CORPUS = auto()
@@ -624,8 +625,12 @@ def main(
 
 # MMLU categories to use for forget loss
 
-mmlu_cats_forget = ["STEM", "business", "geography", "health", "culture"]
-mmlu_cats_retain = ["chemistry", "law", "philosophy", "social sciences", "history"]
+#mmlu_cats_forget = ["STEM", "business", "geography", "health", "culture"]
+#mmlu_cats_retain = ["chemistry", "law", "philosophy", "social sciences", "history"]
+
+
+mmlu_cats_forget = ["STEM", "business", "chemistry", "culture", "geography"] 
+mmlu_cats_retain = ["health", "history", "law", "philosophy", "social sciences"]
 
 #mmlu_cats_forget = ["STEM", "business", "chemistry", "health", "geography"]
 #mmlu_cats_retain = ["social sciences", "culture", "history", "law", "philosophy",]
@@ -789,6 +794,34 @@ datasets_dict = {
         "val_retain_files": [
             f"mmlu_cats_random_trimmed/mmlu_{mmlu_cats_retain[i]}"
             for i in range(2)
+        ],
+        "dev_file": "mmlu_cats_random_trimmed/dev",
+        "retain_dev_file": "mmlu_cats_random_trimmed/dev",
+    },
+    Datasets.MMLU_3CAT: {
+        "unlearn_files": [
+            f"mmlu_cats_random_trimmed/corpus_mmlu_{mmlu_cats_forget[i]}"
+            for i in range(3)
+        ],
+        "wrong_unlearn_files": [
+            f"mmlu_cats_random_trimmed/whp_corpus_mmlu_{mmlu_cats_forget[i]}"
+            for i in range(3)
+        ],
+        "fixed_wrong_unlearn_files": [
+            f"mmlu_cats_random_trimmed/fwf_corpus_mmlu_{mmlu_cats_forget[i]}"
+            for i in range(3)
+        ],
+        "val_files": [
+            f"mmlu_cats_random_trimmed/mmlu_{mmlu_cats_forget[i]}"
+            for i in range(3)
+        ],
+        "retain_files": [
+            f"mmlu_cats_random_trimmed/corpus_mmlu_{mmlu_cats_retain[i]}"
+            for i in range(3)
+        ],
+        "val_retain_files": [
+            f"mmlu_cats_random_trimmed/mmlu_{mmlu_cats_retain[i]}"
+            for i in range(3)
         ],
         "dev_file": "mmlu_cats_random_trimmed/dev",
         "retain_dev_file": "mmlu_cats_random_trimmed/dev",
