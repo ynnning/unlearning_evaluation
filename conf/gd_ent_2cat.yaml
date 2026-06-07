@@ -17,8 +17,8 @@ num_gpus: 2
 # model_id: "models/random_bd/lr2e-07-epoch15"
 model_id: "HuggingFaceH4/zephyr-7b-beta"
 num_layers: ${get_num_layers:${model_id}}
-datasets: [MMLU]
-wandb_project_name: "default_setting"
+datasets: [MMLU_1CAT]
+wandb_project_name: "experiment_1cat_fSTEM_rBIZ_v2"
 results_dir: "evals/pipeline"
 batch_size: 4
 val_batch_size: 8
@@ -118,12 +118,24 @@ unlearn:
           rcs:
             range: ${get_log_range:1e-3, 1e3, 10}
             add: [0, 2, 4]
+        MMLU_2CAT:
+          epochs_lst: [5]
+          lrs: [4e-07, 6e-07, 8e-07]
+          rcs:
+            range: [] #${get_log_range:1e-3, 1e3, 10}
+            add: [0.01, 0.1, 1, 10]
+        MMLU_1CAT:
+          epochs_lst: [20]
+          lrs: [4e-07] # [4e-07,  6e-07, 8e-07]
+          rcs:
+            range: [] #${get_log_range:1e-3, 1e3, 10}
+            add: [2]
         WMDP:
           epochs_lst: [5]
           lrs: [4e-7]
           rcs:
             range: ${get_log_range:1e-3, 1e3, 10}
-            add: [0, 2, 4]
+            add: [0] # 2, 4]
         WMDP_CORPUS:
           epochs_lst: [2]
           lrs: [4e-7, 8e-7, 16e-7, 32e-7]
@@ -252,7 +264,7 @@ ft:
   freeze_layers_coeffs: null
   freeze_layers: ${resolve_freeze_layers:${ft.freeze_layers_coeffs}, ${model_id}}
   epochs_lst: [6]
-  lrs: ${get_log_range:1e-7,5e-6,2}
+  lrs:  [1e-7, 1e-6, 5e-6] #${get_log_range:1e-7,5e-6,2}
   save_models: false
 
 

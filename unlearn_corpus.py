@@ -776,11 +776,12 @@ def main(
         if (not just_eval and (epoch + 1) % eval_every) == 0:
             eval_res = eval(epoch + 1)
             print(f"{eval_res['unlearning/forget_acc']=}, {eval_res['unlearning/retain_acc']=}")
-            if eval_res["unlearning/forget_acc"] < 0.5 and eval_res["unlearning/retain_acc"] > 0.5:
-                temp_save_name = f"{save_name}_epoch{epoch + 1}_temp-save_forget{eval_res['unlearning/forget_acc']}_retain{eval_res['unlearning/retain_acc']}"
-                print(f"saving with name {temp_save_name=}")
-                model.save_pretrained(temp_save_name)
-                tokenizer.save_pretrained(temp_save_name)
+            
+          #  if eval_res["unlearning/forget_acc"] < 0.5 and eval_res["unlearning/retain_acc"] > 0.5:
+        #        temp_save_name = f"{save_name}_epoch{epoch + 1}_temp-#save_forget{eval_res['unlearning/forget_acc']}_retain{eval_res['unlearning/retain_acc']}"
+      #          print(f"saving with name {temp_save_name=}")
+       #         model.save_pretrained(temp_save_name)
+       #         tokenizer.save_pretrained(temp_save_name)
 
 
     if not just_eval or not evaled_0:
