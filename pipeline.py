@@ -43,6 +43,7 @@ class Datasets(Enum):
     YEARS = auto()
     YEARS_TF = auto()
     MMLU = auto()
+    MMLU_1CAT = auto()
     WMDP_CORPUS = auto()
     WMDP_CORPUS_FINEWEB = auto()
     WMDP_CORPUS_MMLU = auto()
@@ -731,6 +732,35 @@ datasets_dict = {
         "val_retain_files": [
             f"mmlu_cats_random_trimmed/mmlu_{mmlu_cats_retain[i]}"
             for i in range(5)
+        ],
+        "dev_file": "mmlu_cats_random_trimmed/dev",
+        "retain_dev_file": "mmlu_cats_random_trimmed/dev",
+    },
+    Datasets.MMLU_1CAT: {
+        "unlearn_files": [
+            f"mmlu_cats_random_trimmed/corpus_mmlu_{mmlu_cats_forget[i]}"
+            for i in range(1)
+        ],
+        "wrong_unlearn_files": [
+            f"mmlu_cats_random_trimmed/whp_corpus_mmlu_{mmlu_cats_forget[i]}"
+            for i in range(1)
+        ],
+        "fixed_wrong_unlearn_files": [
+            f"mmlu_cats_random_trimmed/"
+            f"fwf_corpus_mmlu_{mmlu_cats_forget[i]}"
+            for i in range(1)
+        ],
+        "val_files": [
+            f"mmlu_cats_random_trimmed/mmlu_{mmlu_cats_forget[i]}"
+            for i in range(1)
+        ],
+        "retain_files": [
+            f"mmlu_cats_random_trimmed/corpus_mmlu_{mmlu_cats_retain[i]}"
+            for i in range(1)
+        ],
+        "val_retain_files": [
+            f"mmlu_cats_random_trimmed/mmlu_{mmlu_cats_retain[i]}"
+            for i in range(1)
         ],
         "dev_file": "mmlu_cats_random_trimmed/dev",
         "retain_dev_file": "mmlu_cats_random_trimmed/dev",
