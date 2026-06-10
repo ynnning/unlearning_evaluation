@@ -74,29 +74,29 @@ d_and_es_0 = d_and_es
 print(len(d_and_es), "at the beginning")
 
 # Skill based questions
-fordbidden_strings = [
-    "Which arguments will cause the following",
-    "What is the output",
-    "What is the value of the field of the packet",
-    "What number is returned",
-    "What does the following",
-    "given the code",
-    "following program",
-    "this main function",
-    "following C code",
-    "following x86",
-    "table below",
-    "following code",
-    "following snippet",
-    "following assembly",
-    "following command",
-    "following pseudocode",
-    "following commands",
-    "following operations",
-    "following attack",
-    "{\n",
-    "```",
-]
+fordbidden_strings = [] 
+    #"Which arguments will cause the following",
+   # "What is the output",
+   # "What is the value of the field of the packet",
+   # "What number is returned",
+   # "What does the following",
+   # "given the code",
+   # "following program",
+   # "this main function",
+   # "following C code",
+   # "following x86",
+    #"table below",
+    #"following code",
+    #"following snippet",
+    #"following assembly",
+   # "following command",
+   # "following pseudocode",
+   # "following commands",
+   # "following operations",
+   # "following attack",
+   # "{\n",
+   # "```",
+#]
 
 d_and_es = [
     (d, e, ae) for d, e, ae in d_and_es if not any(fs.lower() in d["question"].lower() for fs in fordbidden_strings)
@@ -114,7 +114,7 @@ d_and_es = [
 
 print(len(d_and_es), "after filtering for specific sql injections")
 
-too_many_digits = 8
+too_many_digits = 15
 d_and_es = [
     (d, e, ae)
     for d, e, ae in d_and_es
@@ -126,7 +126,7 @@ print(len(d_and_es), "after filtering for too many digits")
 
 
 # remove duplicates by distance, keep first
-threshold = 0.7
+threshold = 0.95
 new_d_and_es = []
 for i, (d, e, ae) in enumerate(d_and_es):
     nearest_with_above_idx = max((e @ e2 for _, e2, _ in d_and_es[:i]), default=0)
@@ -137,8 +137,8 @@ d_and_es = new_d_and_es
 print(len(d_and_es), "after removing duplicates in questions")
 
 # remove answer duplicates
-alone_threshold = 0.7
-with_answer_threshold = 1.05
+alone_threshold = 0.95
+with_answer_threshold = 1.15
 authorized_answer_duplicates = [
     "All of these choices",
     "None of these choices",
