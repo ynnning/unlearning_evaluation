@@ -45,7 +45,7 @@ async def get_embeddings(questions, batch_size=10):
 
 data = json.load(open("data/wmdp/cyber.json"))
 questions = [d["question"] for d in data]
-embeds_path = "embeds/cyber-questions-embeds.npy"
+embeds_path = "/workspace/unlearning_evaluation/embeds/cyber-questions-embeds.npy"
 
 if os.path.exists(embeds_path):
     embeds = np.load(embeds_path)
@@ -57,7 +57,7 @@ else:
 
 
 answers = [d["choices"][d["answer"]] for d in data]
-embeds_path = "embeds/cyber-answers-embeds.npy"
+embeds_path = "/workspace/unlearning_evaluation/embeds/cyber-answers-embeds.npy"
 
 if os.path.exists(embeds_path):
     aembeds = np.load(embeds_path)
