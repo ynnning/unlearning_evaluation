@@ -44,6 +44,7 @@ class Datasets(Enum):
     YEARS_TF = auto()
     MMLU = auto()
     MMLU_1CAT = auto()
+    MMLU_2CAT = auto()
     MMLU_STEM_FORGET = auto()
     MMLU_CULTURE_FORGET = auto()
     WMDP_CORPUS = auto()
@@ -624,9 +625,9 @@ def main(
             raise e
 
 # MMLU categories to use for forget loss
-mmlu_cats_forget = ["cyber", "social sciences", "chemistry", "STEM",  "geography"]
+mmlu_cats_forget = ["cyber", "STEM", "chemistry", "STEM",  "geography"]
 
-mmlu_cats_retain = ["social sciences", "culture", "culture", "culture", "culture"]
+mmlu_cats_retain = ["chemistry", "culture", "culture", "culture", "culture"]
 #"business", "history", "law", "philosophy", "health"
 #]
 
@@ -767,16 +768,47 @@ datasets_dict = {
         "dev_file": "mmlu_cats_random_trimmed/dev",
         "retain_dev_file": "mmlu_cats_random_trimmed/dev",
     },
+    Datasets.MMLU_2CAT: {
+        "unlearn_files": [
+            f"mmlu_cats_random_trimmed/corpus_mmlu_{mmlu_cats_forget[i]}"
+            for i in range(2)
+        ],
+        "wrong_unlearn_files": [
+            f"mmlu_cats_random_trimmed/whp_corpus_mmlu_{mmlu_cats_forget[i]}"
+            for i in range(2)
+        ],
+        "fixed_wrong_unlearn_files": [
+            f"mmlu_cats_random_trimmed/"
+            f"fwf_corpus_mmlu_{mmlu_cats_forget[i]}"
+            for i in range(2)
+        ],
+        "val_files": [
+            f"mmlu_cats_random_trimmed/mmlu_{mmlu_cats_forget[i]}"
+            for i in range(2)
+        ],
+        "retain_files": [
+            f"mmlu_cats_random_trimmed/corpus_mmlu_{mmlu_cats_retain[i]}"
+            for i in range(2)
+        ],
+        "val_retain_files": [
+            f"mmlu_cats_random_trimmed/mmlu_{mmlu_cats_retain[i]}"
+            for i in range(2)
+        ],
+        "dev_file": "mmlu_cats_random_trimmed/dev",
+        "retain_dev_file": "mmlu_cats_random_trimmed/dev",
+    },
     Datasets.MMLU_STEM_FORGET: {
         "unlearn_files": [
             f"mmlu_cats_random_trimmed/corpus_mmlu_STEM"
         ],
         "val_files": [
-            f"mmlu_cats_random_trimmed/mmlu_STEM"
+            f"mmlu_cats_random_trimmed/mmlu_STEM", 
+            f"mmlu_cats_random_trimmed/mmlu_wmdp0"
         ],
         "retain_files": [],
         "val_retain_files": [
-            f"mmlu_cats_random_trimmed/mmlu_culture"
+            f"mmlu_cats_random_trimmed/mmlu_wmdp0", 
+            f"mmlu_cats_random_trimmed/mmlu_STEM", 
         ],
         "dev_file": "mmlu_cats_random_trimmed/dev",
         "retain_dev_file": "mmlu_cats_random_trimmed/dev",

@@ -16,10 +16,10 @@ num_gpus: 8
 # model_id: "models/fted/Meta-Llama-3-8B/LossType.LETTER_ANSWER/all_splits/lr1e-06-epoch6"
 #model_id: "meta-llama/Meta-Llama-3-8B"
 # model_id: "models/random_bd/lr2e-07-epoch15"
- model_id: "HuggingFaceH4/zephyr-7b-beta"
+model_id: "HuggingFaceH4/zephyr-7b-beta"
 num_layers: ${get_num_layers:${model_id}}
-datasets:  [MMLU_STEM_FORGET]
-wandb_project_name: "MMLU_ft_Stem_val_Culture"
+datasets:  [MMLU_2CAT]
+wandb_project_name: "MMLU_ft_Cyber_val_STEM"
 # wandb_project_name: "testing"
 results_dir: "evals/pipeline"
 batch_size: 4
