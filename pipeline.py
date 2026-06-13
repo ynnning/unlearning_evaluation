@@ -45,7 +45,7 @@ class Datasets(Enum):
     MMLU = auto()
     MMLU_1CAT = auto()
     MMLU_STEM_FORGET = auto()
-    MMLU_CULTURE_FORGET = auto(
+    MMLU_CULTURE_FORGET = auto()
     WMDP_CORPUS = auto()
     WMDP_CORPUS_FINEWEB = auto()
     WMDP_CORPUS_MMLU = auto()
