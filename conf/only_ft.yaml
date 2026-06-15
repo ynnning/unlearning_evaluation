@@ -6,7 +6,7 @@ defaults:
 just_eval: false
 eval_model_paths: [""]
 only_ft: true
-ft_model_paths: [["HuggingFaceH4/zephyr-7b-beta", "MMLU_STEM_FORGET"]]
+ft_model_paths: [["HuggingFaceH4/zephyr-7b-beta", "MMLU_FT"]]
 #diff_tokenizer: "HuggingFaceH4/zephyr-7b-beta"
 dont_ft: false
 testing: false
@@ -19,7 +19,7 @@ num_gpus: 8
 model_id: "HuggingFaceH4/zephyr-7b-beta"
 num_layers: ${get_num_layers:${model_id}}
 datasets:  [MMLU_2CAT]
-wandb_project_name: "MMLU_ft_Cyber_val_STEM"
+wandb_project_name: "MMLU_ft_elemMath_ML"
 # wandb_project_name: "testing"
 results_dir: "evals/pipeline"
 batch_size: 4
@@ -178,12 +178,12 @@ unlearn:
 
 ft:
   num_splits: 2
-  loss_types: [QUESTION_LETTER_ANSWER]
+  loss_types: [CORPUS] # [QUESTION_LETTER_ANSWER] 
   # A list of lists; resolves to coefficient * num_layers. ex: [[0, "0.5"]]
   freeze_layers_coeffs: null
   freeze_layers: ${resolve_freeze_layers:${ft.freeze_layers_coeffs}, ${model_id}}
   epochs_lst: [10]
-  lrs: ${get_log_range:1e-7,5e-6,2}
+  lrs: [ 8e-8, 1e-7, 2e-7, ] #${get_log_range:1e-7,5e-6,2}
   save_models: false
 
 

@@ -490,7 +490,7 @@ def main(
                                 [val_files[skip_split]]
                                 if skip_split < len(val_files) else [""]
                             )
-                            ft_val_retain_files = val_retain_files
+                            ft_val_retain_files = [val_retain_files[skip_split]]
                             #ft_files = [
                             #    file for i, file in enumerate(val_files)
                             #    if i != skip_split
@@ -832,17 +832,24 @@ datasets_dict = {
     Datasets.MMLU_FT: {
         "unlearn_files": ["mmlu_cats_random_trimmed/corpus_mmlu_STEM"],
         "ft_train_files": [
-            "mmlu_cats_random_trimmed/corpus_mmlu_STEM",
-            "mmlu_cats_random_trimmed/corpus_mmlu_cyber",
+            #"mmlu_cats_random_trimmed/mmlu_cyber",   # skip=0 trains on this
+            #"mmlu_cats_random_trimmed/mmlu_STEM",    # skip=1 trains on this
+            "mmlu_cats_random_trimmed/corpus_mmlu_machine_learning",   # skip=0 trains on this
+           "mmlu_cats_random_trimmed/corpus_mmlu_elementary_mathematics",    # skip=1 trains on this
+
         ],
         "val_files": [
-            "mmlu_cats_random_trimmed/mmlu_STEM",
-            "mmlu_cats_random_trimmed/mmlu_cyber",
+            #"mmlu_cats_random_trimmed/mmlu_STEM",           # skip=0 forget eval
+            #"mmlu_cats_random_trimmed/mmlu_cyber",          # skip=1 forget eval
+            "mmlu_cats_random_trimmed/mmlu_elementary_mathematics",           # skip=0 forget eval
+            "mmlu_cats_random_trimmed/mmlu_machine_learning",          # skip=1 forget eval
         ],
         "retain_files": [],
         "val_retain_files": [
-            "mmlu_cats_random_trimmed/mmlu_cyber",
-            "mmlu_cats_random_trimmed/mmlu_STEM",
+            #"mmlu_cats_random_trimmed/mmlu_cyber",          # skip=0 retain eval
+            #"mmlu_cats_random_trimmed/mmlu_STEM",           # skip=1 retain eval
+            "mmlu_cats_random_trimmed/mmlu_machine_learning",          # skip=0 retain eval
+            "mmlu_cats_random_trimmed/mmlu_elementary_mathematics",           # skip=1 retain eval
         ],
         "dev_file": "mmlu_cats_random_trimmed/dev",
         "retain_dev_file": "mmlu_cats_random_trimmed/dev",
