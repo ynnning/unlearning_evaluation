@@ -1380,71 +1380,144 @@ def run_pipeline(cfg: DictConfig) -> None:
                                             max_samples=max_samples,
                                         )]
         elif only_ft:
-            for ft_model_path, dataset in ft_model_paths:
-                dataset = Datasets[dataset]
-                unlearn_type = UnlearnType.GD
-                unlearn_type_config = unlearn_types_config[
-                    unlearn_type.name
-                ] 
-                unlearn_loss_type = unlearn_type_config["loss_type"]
-                dataset_config = (
-                    unlearn_type_config["datasets_config"][Datasets.YEARS.name]
-                )
-                epochs_lst = dataset_config["epochs_lst"]
-                lrs = dataset_config["lrs"]
-                rcs = (
-                    dataset_config["rcs"]["range"]
-                    + dataset_config["rcs"]["add"]
-                )
-                dataset_dict = datasets_dict[dataset]
-                refs += [main.remote(
-                    unlearn_type=unlearn_types[0],
-                    dataset=dataset,
-                    unlearn_files=dataset_dict["unlearn_files"],
-                    wrong_unlearn_files=dataset_dict.get(
-                        "wrong_unlearn_files", []
-                    ),
-                    fixed_wrong_unlearn_files = dataset_dict.get(
-                        "fixed_wrong_unlearn_files", []
-                    ),
-                    val_files=dataset_dict["val_files"],
-                    dev_file=dataset_dict["dev_file"],
-                    retain_files=dataset_dict["retain_files"],
-                    val_retain_files=dataset_dict["val_retain_files"],
-                    retain_dev_file=dataset_dict["retain_dev_file"],
-                    base_model=model_id,
-                    lr=lrs[0],
-                    epochs=2,
-                    batch_size=batch_size,
-                    val_batch_size=val_batch_size,
-                    retain_coeff=rcs[0],
-                    warmup_steps=warmup_steps,
-                    data_seed=data_seed,
-                    eval_every=eval_every,
-                    save_name=ft_model_path,
-                    wandb_project_name=wandb_project_name,
-                    results_dir=results_dir,
-                    only_ft=only_ft,
-                    ft_model_path=ft_model_path,
-                    num_ft_splits=num_ft_splits,
-                    ft_loss_types=ft_loss_types,
-                    ft_lrs=ft_lrs,
-                    ft_epochs_lst=ft_epochs_lst,
-                    save_ft_models=save_ft_models,
-                    start_time=curr_time_str,
-                    start_time_sf=start_time_sf_str,
-                    dont_ft=dont_ft,
-                    diff_tokenizer=diff_tokenizer,
-                    unlearn_freeze_layers=unlearn_freeze_layers,
-                    ft_freeze_layers=ft_freeze_layers,
-                    ft_dont_eval=ft_dont_eval,
-                    ft_on_all=ft_on_all,
-                    hydra_dict=config_flat,
-                    unlearn_data_format=unlearn_data_format,
-                    ft_data_format=ft_data_format,
-                    unlearn_loss_type=unlearn_loss_type,
-                    ft_train_files=dataset_dict.get("ft_train_files", []),
-                )]
+            ft_pairs = OmegaConf.select(cfg, "ft_pairs", default=[])
+            ft_train_formats = OmegaConf.select(cfg, "ft_train_formats", default=["MCQ"])
+
+            if ft_pairs:
+                base = "mmlu_cats_random_trimmed"
+                for subj_a, subj_b in ft_pairs:
+                    for fmt in ft_train_formats:
+                        prefix = "corpus_mmlu_" if fmt == "CORPUS" else "mmlu_"
+                        loss_type_for_fmt = LossType.CORPUS if fmt == "CORPUS" else LossType.QUESTION_LETTER_ANSWER
+                        pair_dataset_dict = {
+                            "unlearn_files": [],
+                            "ft_train_files": [
+                                f"{base}/{prefix}{subj_a}",
+                                f"{base}/{prefix}{subj_b}",
+                            ],
+                            "val_files": [
+                                f"{base}/mmlu_{subj_b}",
+                                f"{base}/mmlu_{subj_a}",
+                            ],
+                            "retain_files": [],
+                            "val_retain_files": [
+                                f"{base}/mmlu_{subj_a}",
+                                f"{base}/mmlu_{subj_b}",
+                            ],
+                            "dev_file": f"{base}/dev",
+                            "retain_dev_file": f"{base}/dev",
+                        }
+                        refs += [main.remote(
+                            unlearn_type=UnlearnType.GD,
+                            dataset=Datasets.MMLU_FT,
+                            unlearn_files=[],
+                            wrong_unlearn_files=[],
+                            fixed_wrong_unlearn_files=[],
+                            val_files=pair_dataset_dict["val_files"],
+                            dev_file=pair_dataset_dict["dev_file"],
+                            retain_files=[],
+                            val_retain_files=pair_dataset_dict["val_retain_files"],
+                            retain_dev_file=pair_dataset_dict["retain_dev_file"],
+                            base_model=model_id,
+                            lr=ft_lrs[0],
+                            epochs=ft_epochs_lst[0],
+                            batch_size=batch_size,
+                            val_batch_size=val_batch_size,
+                            retain_coeff=1,
+                            warmup_steps=warmup_steps,
+                            data_seed=data_seed,
+                            eval_every=eval_every,
+                            save_name=None,
+                            wandb_project_name=wandb_project_name,
+                            results_dir=results_dir,
+                            only_ft=True,
+                            ft_model_path=model_id,
+                            num_ft_splits=2,
+                            ft_loss_types=[loss_type_for_fmt],
+                            ft_lrs=ft_lrs,
+                            ft_epochs_lst=ft_epochs_lst,
+                            save_ft_models=save_ft_models,
+                            start_time=curr_time_str,
+                            start_time_sf=start_time_sf_str,
+                            dont_ft=dont_ft,
+                            diff_tokenizer=diff_tokenizer,
+                            unlearn_freeze_layers=unlearn_freeze_layers,
+                            ft_freeze_layers=ft_freeze_layers,
+                            ft_dont_eval=ft_dont_eval,
+                            ft_on_all=ft_on_all,
+                            hydra_dict=config_flat,
+                            unlearn_data_format=unlearn_data_format,
+                            ft_data_format=ft_data_format,
+                            unlearn_loss_type=LossType.CORPUS,
+                            ft_train_files=pair_dataset_dict["ft_train_files"],
+                            name=f"{subj_a}_vs_{subj_b}_{fmt}",
+                        )]
+            else:
+                for ft_model_path, dataset in ft_model_paths:
+                    dataset = Datasets[dataset]
+                    unlearn_type = UnlearnType.GD
+                    unlearn_type_config = unlearn_types_config[
+                        unlearn_type.name
+                    ] 
+                    unlearn_loss_type = unlearn_type_config["loss_type"]
+                    dataset_config = (
+                        unlearn_type_config["datasets_config"][Datasets.YEARS.name]
+                    )
+                    epochs_lst = dataset_config["epochs_lst"]
+                    lrs = dataset_config["lrs"]
+                    rcs = (
+                        dataset_config["rcs"]["range"]
+                        + dataset_config["rcs"]["add"]
+                    )
+                    dataset_dict = datasets_dict[dataset]
+                    refs += [main.remote(
+                        unlearn_type=unlearn_types[0],
+                        dataset=dataset,
+                        unlearn_files=dataset_dict["unlearn_files"],
+                        wrong_unlearn_files=dataset_dict.get(
+                            "wrong_unlearn_files", []
+                        ),
+                        fixed_wrong_unlearn_files = dataset_dict.get(
+                            "fixed_wrong_unlearn_files", []
+                        ),
+                        val_files=dataset_dict["val_files"],
+                        dev_file=dataset_dict["dev_file"],
+                        retain_files=dataset_dict["retain_files"],
+                        val_retain_files=dataset_dict["val_retain_files"],
+                        retain_dev_file=dataset_dict["retain_dev_file"],
+                        base_model=model_id,
+                        lr=lrs[0],
+                        epochs=2,
+                        batch_size=batch_size,
+                        val_batch_size=val_batch_size,
+                        retain_coeff=rcs[0],
+                        warmup_steps=warmup_steps,
+                        data_seed=data_seed,
+                        eval_every=eval_every,
+                        save_name=ft_model_path,
+                        wandb_project_name=wandb_project_name,
+                        results_dir=results_dir,
+                        only_ft=only_ft,
+                        ft_model_path=ft_model_path,
+                        num_ft_splits=num_ft_splits,
+                        ft_loss_types=ft_loss_types,
+                        ft_lrs=ft_lrs,
+                        ft_epochs_lst=ft_epochs_lst,
+                        save_ft_models=save_ft_models,
+                        start_time=curr_time_str,
+                        start_time_sf=start_time_sf_str,
+                        dont_ft=dont_ft,
+                        diff_tokenizer=diff_tokenizer,
+                        unlearn_freeze_layers=unlearn_freeze_layers,
+                        ft_freeze_layers=ft_freeze_layers,
+                        ft_dont_eval=ft_dont_eval,
+                        ft_on_all=ft_on_all,
+                        hydra_dict=config_flat,
+                        unlearn_data_format=unlearn_data_format,
+                        ft_data_format=ft_data_format,
+                        unlearn_loss_type=unlearn_loss_type,
+                        ft_train_files=dataset_dict.get("ft_train_files", []),
+                    )]
 
 
         elif just_eval:

@@ -12,6 +12,43 @@ dont_ft: false
 testing: false
 raise_exceptions: false
 
+
+# Automated pairwise experiments — set ft_pairs to use instead of ft_model_paths
+ft_pairs:
+  - ["machine_learning", "elementary_mathematics"]
+  - ["college_mathematics", "machine_learning"]
+  - ["college_mathematics", "conceptual_physics"]
+  - ["college_mathematics", "high_school_mathematics"]
+  - ["college_mathematics", "elementary_mathematics"]
+  - ["college_mathematics", "high_school_physics"]
+  - ["college_mathematics", "abstract_algebra"]
+  - ["college_mathematics", "college_computer_science"]
+  - ["machine_learning", "conceptual_physics"]
+  - ["machine_learning", "high_school_mathematics"]
+  - ["machine_learning", "elementary_mathematics"]
+  - ["machine_learning", "high_school_physics"]
+  - ["machine_learning", "abstract_algebra"]
+  - ["machine_learning", "college_computer_science"]
+  - ["conceptual_physics", "high_school_mathematics"]
+  - ["conceptual_physics", "elementary_mathematics"]
+  - ["conceptual_physics", "high_school_physics"]
+  - ["conceptual_physics", "abstract_algebra"]
+  - ["conceptual_physics", "college_computer_science"]
+  - ["high_school_mathematics", "elementary_mathematics"]
+  - ["high_school_mathematics", "high_school_physics"]
+  - ["high_school_mathematics", "abstract_algebra"]
+  - ["high_school_mathematics", "college_computer_science"]
+  - ["elementary_mathematics", "high_school_physics"]
+  - ["elementary_mathematics", "abstract_algebra"]
+  - ["elementary_mathematics", "college_computer_science"]
+  - ["high_school_physics", "abstract_algebra"]
+  - ["high_school_physics", "college_computer_science"]
+  - ["abstract_algebra", "college_computer_science"]
+
+# Which formats to train on for each pair: CORPUS, MCQ, or both
+ft_train_formats: [MCQ, CORPUS]
+
+
 num_gpus: 8
 # model_id: "models/fted/Meta-Llama-3-8B/LossType.LETTER_ANSWER/all_splits/lr1e-06-epoch6"
 #model_id: "meta-llama/Meta-Llama-3-8B"
@@ -19,7 +56,7 @@ num_gpus: 8
 model_id: "HuggingFaceH4/zephyr-7b-beta"
 num_layers: ${get_num_layers:${model_id}}
 datasets:  [MMLU_2CAT]
-wandb_project_name: "MMLU_ft_elemMath_ML"
+wandb_project_name: "MMLU_pairwise_v2"
 # wandb_project_name: "testing"
 results_dir: "evals/pipeline"
 batch_size: 4
@@ -183,7 +220,7 @@ ft:
   freeze_layers_coeffs: null
   freeze_layers: ${resolve_freeze_layers:${ft.freeze_layers_coeffs}, ${model_id}}
   epochs_lst: [10]
-  lrs: [ 8e-8, 1e-7, 2e-7, ] #${get_log_range:1e-7,5e-6,2}
+  lrs: [ 8e-8, 1e-7 ] #${get_log_range:1e-7,5e-6,2}
   save_models: false
 
 
