@@ -46,6 +46,7 @@ class Datasets(Enum):
     MMLU_1CAT = auto()
     MMLU_2CAT = auto()
     MMLU_STEM_FORGET = auto()
+    MMLU_FT = auto()
     MMLU_CULTURE_FORGET = auto()
     WMDP_CORPUS = auto()
     WMDP_CORPUS_FINEWEB = auto()
@@ -310,6 +311,7 @@ def main(
     unlearn_loss_type: LossType = LossType.CORPUS,
     steering_coeff: float = 20, # for RMU
     max_samples: int = 9999999999, # limit number of datapoints for unlearning
+    ft_train_files: list[str] = [],  # add this
 ):
     try:
         if not only_ft:
@@ -478,8 +480,10 @@ def main(
                                 f"{loss_type}/ft-skip_split{skip_split}/"
                                 f"lr{lr}"
                             )
+                            # New line 
+                            ft_train_files_all = ft_train_files if ft_train_files else val_files
                             ft_files = [
-                                file for i, file in enumerate(val_files)
+                                file for i, file in enumerate(ft_train_files_all)
                                 if i != skip_split
                             ]
                             ft_val_files = (
@@ -487,6 +491,15 @@ def main(
                                 if skip_split < len(val_files) else [""]
                             )
                             ft_val_retain_files = ft_files.copy()
+                            #ft_files = [
+                            #    file for i, file in enumerate(val_files)
+                            #    if i != skip_split
+                            #]
+                            #ft_val_files = (
+                            #    [val_files[skip_split]]
+                            #    if skip_split < len(val_files) else [""]
+                            #)
+                            #ft_val_retain_files = ft_files.copy()
                             ft_refs += [
                                 finetune_corpus.main.remote(
                                     train_files=ft_files,
@@ -799,16 +812,37 @@ datasets_dict = {
     },
     Datasets.MMLU_STEM_FORGET: {
         "unlearn_files": [
+            #f"mmlu_cats_random_trimmed/corpus_mmlu_STEM", 
             f"mmlu_cats_random_trimmed/corpus_mmlu_STEM"
         ],
         "val_files": [
-            f"mmlu_cats_random_trimmed/mmlu_STEM", 
-            f"mmlu_cats_random_trimmed/mmlu_wmdp0"
+            #f"mmlu_cats_random_trimmed/mmlu_STEM", 
+            #f"mmlu_cats_random_trimmed/mmlu_cyber"
+            f"mmlu_cats_random_trimmed/corpus_mmlu_STEM",
+            f"mmlu_cats_random_trimmed/corpus_mmlu_cyber"
         ],
         "retain_files": [],
         "val_retain_files": [
-            f"mmlu_cats_random_trimmed/mmlu_wmdp0", 
+            f"mmlu_cats_random_trimmed/mmlu_cyber", 
             f"mmlu_cats_random_trimmed/mmlu_STEM", 
+        ],
+        "dev_file": "mmlu_cats_random_trimmed/dev",
+        "retain_dev_file": "mmlu_cats_random_trimmed/dev",
+    },
+    Datasets.MMLU_FT: {
+        "unlearn_files": ["mmlu_cats_random_trimmed/corpus_mmlu_STEM"],
+        "ft_train_files": [
+            "mmlu_cats_random_trimmed/corpus_mmlu_STEM",
+            "mmlu_cats_random_trimmed/corpus_mmlu_cyber",
+        ],
+        "val_files": [
+            "mmlu_cats_random_trimmed/mmlu_STEM",
+            "mmlu_cats_random_trimmed/mmlu_cyber",
+        ],
+        "retain_files": [],
+        "val_retain_files": [
+            "mmlu_cats_random_trimmed/mmlu_cyber",
+            "mmlu_cats_random_trimmed/mmlu_STEM",
         ],
         "dev_file": "mmlu_cats_random_trimmed/dev",
         "retain_dev_file": "mmlu_cats_random_trimmed/dev",
@@ -1402,6 +1436,7 @@ def run_pipeline(cfg: DictConfig) -> None:
                     unlearn_data_format=unlearn_data_format,
                     ft_data_format=ft_data_format,
                     unlearn_loss_type=unlearn_loss_type,
+                    ft_train_files=dataset_dict.get("ft_train_files", []),
                 )]
 
 
