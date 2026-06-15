@@ -490,7 +490,7 @@ def main(
                                 [val_files[skip_split]]
                                 if skip_split < len(val_files) else [""]
                             )
-                            ft_val_retain_files = ft_files.copy()
+                            ft_val_retain_files = val_retain_files
                             #ft_files = [
                             #    file for i, file in enumerate(val_files)
                             #    if i != skip_split
