@@ -307,7 +307,10 @@ def main(
     assert (keep_set and keep_set_weight) or (not keep_set and not keep_set_weight)
 
     curr_time = datetime.datetime.now()
-    wandb.init(project=project_name, config={**locals(), "hydra_dict": hydra_dict}, name=name+f"---{curr_time}")
+    
+    train_subj = train_files[0].split('/')[-1].replace('corpus_mmlu_', '') if train_files else "unknown" # define train and val subject
+    val_subj = val_retain_files[0].split('/')[-1].replace('mmlu_', '') if val_retain_files else "unknown"
+    wandb.init(project=project_name, config={**locals(), "hydra_dict": hydra_dict}, name=f"train={train_subj}__val={val_subj}__{name}---{curr_time}")
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     tokenizer = AutoTokenizer.from_pretrained(diff_tokenizer if diff_tokenizer != "" else base_model)
     tokenizer.pad_token = tokenizer.eos_token
